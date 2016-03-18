@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+html, body {
+  height: 100%;
+}
+
+nav {
+     position: absolute;
+     margin: 0;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 128px;
+     
+     background-color: #00FFFF;
+}
+#inner {
+    position: absolute;
+    margine: 0;
+    top: 96px;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    width: auto;
+    background-color: #202020;
+    
+    
+}
+nav ul li {
+    display: inline-block;
+}
+
+nav ul a {
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+    color: #585858;
+}
+
+nav ul li a:hover {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); */
+  /* background: rgba(255, 255, 255, 0.1); */
+  color: white;
+}
+
+nav ul li a:active {
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6); */
+  /* background: rgba(255, 255, 255, 0.1); */
+  color: green;
+}
+
+#currentpage a {
+color: yellow;
+}
+
+#mycontent {
+      position: absolute;
+      top: 160px;
+      padding: 8px;
+}
+										

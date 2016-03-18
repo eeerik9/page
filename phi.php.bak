@@ -1,0 +1,42 @@
+<html>
+<head>
+<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+<script type="text/javascript">
+LatexIT.add('p',true);
+</script>
+</head>
+<body>
+<p>$\Phi = \frac{13}{8} + \sum\limits_{n=0}^\infty \frac{(-1)^{n+1}(2n+1)!}{(n+2)!n!4^{2n+3}}$ </p>
+<br>
+<p> $\Phi = \sqrt{1+\sqrt{1+\sqrt{1+\ldots}}}$</p>
+<p> $\Phi = 1 + \frac{1}{1+\frac{1}{1+\frac{1}{1+\ldots}}}$</p>
+<br>
+<p> $\Phi = \phi + 1$</p>
+<p> $\Phi = \frac{1}{\phi}$</p>
+<br>
+<p> $\Phi + 1 = \Phi^{2}$</p>
+<p> $\Phi^{2} + \Phi = \Phi(\Phi +1) = \Phi * \Phi^{2} = \Phi^{3}$</p>
+
+<p> $\Phi^{3} = \Phi  + \Phi^{2} = \Phi + \Phi + 1 = \Phi + \phi + 1 + 1 = \Phi + 1 + 1 + \frac{1}{\Phi} $</p>
+<br>
+<p> $\Phi = \frac{1+ \sqrt{5}}{2}$ </p>
+<p> $= \frac{1}{2} + \frac{\sqrt{5}}{2}$ </p>
+<p> $= \frac{1}{2} + \sqrt{\frac{5}{4}}$ </p>
+<p> $= \frac{1}{2} + \sqrt{1,25}$ </p>
+<br>
+<p> $2\cos{\frac{\pi}{5}} = \Phi$ </p>
+<p> $2\sin{\frac{\pi}{5}} = \sqrt{3-\Phi}$ </p>
+<p> $2\sin{54^{\circ}} = \sin{\frac{3}{10}\pi}= \Phi$ </p>
+<br>
+Fibonacci Sequence<br>
+1, 1, 2, 3, 5, 8, 13, 21, .. <br>
+
+
+
+
+<!--
+<p>Dividing $x^2+1$ by $y^2$ gives \[\frac{x^2+1}{y^2}\]</p>
+<p>The british pound is worth 1.5 US\$ or $1.1 \euro$</p>
+-->
+</body>
+</html>

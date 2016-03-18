@@ -1,0 +1,23 @@
+Classical spiral
+
+1.picture (3D)
+x= cos(t)
+y= sin(t)
+z= t
+
+1.picture (2D)
+x= cos(t)
+y= sin(t)
+z= 1
+
+Logarithmic spirat
+
+2.picture (3D)
+x= (2.718^(0.1759*t))*cos(t)
+y= (2.718^(0.1759*t))*sin(t)
+z= t
+
+2.picture (2D)
+x= (2.718^(0.1759*t))*cos(t)
+y= (2.718^(0.1759*t))*sin(t)
+z= 1
