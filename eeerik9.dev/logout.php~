@@ -1,4 +1,0 @@
-<?php
-unset(  $_POST['submit'] );
-header("Location: index.php"); // Redirecting To Home Page
-?>

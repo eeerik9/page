@@ -1,8 +1,8 @@
 <?php
 	$servername = "localhost";
-	$username = "recon_qss";
-	$password = "recon_qss";
-	$dbname = "users";
+	$username = "erik";
+	$password = "nikanika";
+	$dbname = "database1";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,11 +11,13 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 	// var_dump($_POST);
+	$first = $_POST['firstname'];
+	$last = $_POST['lastname'];
 	$user = $_POST['username'];
 	$pass = $_POST['password'];
 	$email =$_POST['email'];
-	$sql = "INSERT INTO users (username, password, email)
-	VALUES ('$user', '$pass', '$email')";
+	$sql = "INSERT INTO users (firstname, lastname, username, password, email)
+	VALUES ('$firstname', '$lastname', '$user', '$pass', '$email')";
 
 	if ($conn->query($sql) === TRUE) {
     	echo "New record created successfully";
@@ -25,7 +27,7 @@
 
 	$conn->close();
 
-	header("Location: profile.php"); // redirect back to your contact form
+	header("Location: index.php"); // redirect back to your contact form
 	exit;
 
 ?>
