@@ -8,13 +8,13 @@
 <body>
 <form action="updatedb.php" method="post" id="form2">
   		Meno:<br>
-  		<input type="text" name="firstname"><br>
+  		<input type="text" name="firstname" required="required" pattern="[A-Z]{1}[a-z]{1,29}"><br>
   		Priezvisko:<br>
-  		<input type="text" name="lastname"><br>
+  		<input type="text" name="lastname" required="required" pattern="[A-Z]{1}[a-z]{1,29}"><br>
   		Prihlasovacie meno:<br>
-  		<input type="text" name="username"><br>
+  		<input type="text" name="username" required="required" pattern="[a-zA-Z_]{3,}[0-25]*"><br>
   		Email:<br>
-  		<input type="text" name="email"><br>
+  		<input type="text" name="email" required="required" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"><br>
   		Heslo:<br>
   		<input name="password" placeholder="**********" type="password"><br>
   		Heslo:<br>

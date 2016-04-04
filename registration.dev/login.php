@@ -1,4 +1,5 @@
 <?php
+	require_once('connectdb.php');
 	session_start();
 	$error = '';
 	echo "1";
@@ -7,29 +8,16 @@
 			$error = "Username or Password is invalid";
 			echo "2";
 		} else {
-			
-			$dbservername = "localhost";
-			$dbusername = "erik";
-			$dbpassword = "nikanika";
-			$dbname = "database1";
-			echo "3";
-			// Create connection
-			$conn = mysql_connect($dbservername, $dbusername, $dbpassword);
-			// Check connection
-			if ($conn->connect_error) {
-				echo "5";
-	    		die("Connection failed: " . $conn->connect_error);
-			}	 
-			mysql_select_db($dbname, $conn);
+
+			$conn = connect_db();
 			
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$username = stripslashes($username);
-			$password = stripslashes($password);
-			$username = mysql_real_escape_string($username);
-			$password = mysql_real_escape_string($password);
-			var_dump($username);
-			var_dump($password);
+			
+			$username = escape_fields($username);
+			$password = escape_fields($password);
+			// var_dump($username, __LINE__);
+			// var_dump($password, __LINE__);
 			
 			$query = mysql_query("SELECT * FROM users WHERE username='$username' and password='$password'",$conn);
 			var_dump($query);			

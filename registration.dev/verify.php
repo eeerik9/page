@@ -1,6 +1,6 @@
 <?php
-mysql_connect("localhost", "tutorial", "password") or die(mysql_error()); // Connect to database server(localhost) with username and password.
-mysql_select_db("registrations") or die(mysql_error()); // Select registration database.
+require_once('connectdb.php');
+$conn = connect_db();
              
 if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash'])){
     // Verify data
@@ -12,7 +12,7 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
                  
     if($match > 0){
         // We have a match, activate the account
-        mysql_query("UPDATE users SET active='1' WHERE email='".$email."' AND hash='".$hash."' AND active='0'") or die(mysql_error());
+        mysql_query("UPDATE users SET active='1' WHERE email='".$email."' AND hash='".$hash."' AND active='0'", $conn) or die(mysql_error());
         echo '<div class="statusmsg">Your account has been activated, you can now login</div>';
     }else{
         // No match -> invalid url or account has already been activated.
