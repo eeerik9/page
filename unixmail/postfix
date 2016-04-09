@@ -1,0 +1,27 @@
+sudo apt-get install postfix
+sudo apt-get install mailutils
+sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules 
+
+http://askubuntu.com/questions/47609/how-to-have-my-php-send-mail
+https://community.runabove.com/kb/en/instances/how-to-relay-postfix-mails-via-smtp.gmail.com-on-ubuntu-14.04.html
+Add these lines
+sudo vim /etc/postfix/main.cf 
+relayhost = [smtp.gmail.com]:587
+
+smtp_use_tls=yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_sasl_tls_security_options = noanonymous
+              
+sudo vim /etc/postfix/sasl_passwd
+[smtp.gmail.com]:587 eeerik9.net16.net@gmail.com:heslo
+
+sudo chmod 400 /etc/postfix/sasl/sasl_passwd
+sudo postmap /etc/postfix/sasl/sasl_passwd
+
+Test your configuration
+echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com
+
+Troubleshooting
+sudo vim /var/log/mail.log
