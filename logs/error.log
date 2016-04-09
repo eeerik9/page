@@ -1,0 +1,15 @@
+[Sat Apr 09 17:55:56.131460 2016] [authz_core:error] [pid 4809] [client 127.0.0.1:49390] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 17:56:04.148797 2016] [authz_core:error] [pid 4810] [client 127.0.0.1:49392] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 18:02:05.753084 2016] [authz_core:error] [pid 4993] [client 127.0.0.1:49660] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 18:05:21.965094 2016] [authz_core:error] [pid 5202] [client 127.0.0.1:49760] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 18:05:22.636335 2016] [authz_core:error] [pid 5202] [client 127.0.0.1:49760] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 18:05:23.068317 2016] [authz_core:error] [pid 5202] [client 127.0.0.1:49760] AH01630: client denied by server configuration: /tmp/page/chat.dev/
+[Sat Apr 09 18:15:26.786674 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_connect(): Access denied for user 'eeerik9'@'localhost' (using password: YES) in /tmp/page/chat.dev/login.php on line 14, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.786920 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_real_escape_string(): Access denied for user 'www-data'@'localhost' (using password: NO) in /tmp/page/chat.dev/login.php on line 18, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.786932 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /tmp/page/chat.dev/login.php on line 18, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787076 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_real_escape_string(): Access denied for user 'www-data'@'localhost' (using password: NO) in /tmp/page/chat.dev/login.php on line 19, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787086 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_real_escape_string(): A link to the server could not be established in /tmp/page/chat.dev/login.php on line 19, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787100 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /tmp/page/chat.dev/login.php on line 23, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787110 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in /tmp/page/chat.dev/login.php on line 25, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787114 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, null given in /tmp/page/chat.dev/login.php on line 26, referer: http://www.chat.dev/
+[Sat Apr 09 18:15:26.787119 2016] [:error] [pid 5318] [client 127.0.0.1:50050] PHP Warning:  mysql_close() expects parameter 1 to be resource, boolean given in /tmp/page/chat.dev/login.php on line 34, referer: http://www.chat.dev/
