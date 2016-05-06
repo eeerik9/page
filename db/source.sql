@@ -49,6 +49,13 @@ pict VARCHAR(256) NOT NULL,
 timestamp TIMESTAMP
 );
 
+DROP TABLE IF EXISTS login_sessions;
+CREATE TABLE login_sessions (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(30) NOT NULL,
+timestamp TIMESTAMP
+);
+
 
 
 

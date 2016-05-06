@@ -1,4 +1,5 @@
 <?php
+require_once("../db/connectdb.php");
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
@@ -11,23 +12,26 @@ else
 $username=$_POST['username'];
 $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-$connection = mysql_connect("localhost", "eeerik9", "nikanika");
+//$connection = mysql_connect("localhost", "recon_qss", "recon_qss");
+$mydb = new db();
+$mydb->db_set("localhost","recon_qss", "recon_qss");
+$connection = $mydb->db_connect();
 // To protect MySQL injection for Security purpose
-$username = stripslashes($username);
-$password = stripslashes($password);
-$username = mysql_real_escape_string($username);
-$password = mysql_real_escape_string($password);
+$username = escape_fields($username);
+$password = escape_fields($password);
+//$username = mysql_real_escape_string($username);
+//$password = mysql_real_escape_string($password);
 //hash the password
-$password = hash('sha256', $password);
+//$password = hash('sha256', $password);
 // Selecting Database
-$db = mysql_select_db("eeerik9", $connection);
+$mydb->db_change("database1");
 // SQL query to fetch information of registerd users and finds user match.
 $query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
 $rows = mysql_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$username; // Initializing Session
 mysql_query("INSERT INTO login_sessions (username) VALUES ('$username')");
-header("location: profile.php"); // Redirecting To Other Page
+header("Location: profile.php"); // Redirecting To Other Page
 } else {
 $error = "Username or Password is invalid";
 }
