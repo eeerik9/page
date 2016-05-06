@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+#corners1 {
+    border-radius: 15px;
+    border: 3px solid #73AD21;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#buttons {
+    
+}
+
+#corners2 {
+    border-radius: 15px;
+    border: 3px solid #FF0000;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#area1 { 
+    vertical-align:top;
+}
+
+</style>
+</head>
+<body>
+
+<div id="corners1">
+<div id="1">
+ <label>Lab1 </label>
+ <button> - </button>
+</div>
+
+</br>
+
+<div id="2">
+<label>Lab2 </label>
+<button> - </button>
+</div>
+
+</div>
+
+</br>
+
+<div id="corners2">
+<div id="3">
+<textarea id="area1" rows="1">Lab3 </textarea>
+<button> + </button>
+</div>
+</div>
+
+</body>
+</html>
+
