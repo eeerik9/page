@@ -30,33 +30,68 @@
 }
 
 </style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 
 <div id="corners1">
-<div id="1">
- <label>Lab1 </label>
- <button> - </button>
+<div id="d1">
+ <label id="l1">Lab1 </label>
+ <button id="b1"> - </button>
+ 
+ <script>
+ $( "#b1" ).click(function() {
+ $( "#d1" ).remove();
+ });
+ </script>
 </div>
 
 </br>
 
-<div id="2">
+
+<div id="d2">
 <label>Lab2 </label>
-<button> - </button>
-</div>
-
+<button id="b2"> - </button>
+<script>
+ $( "#b2" ).click(function() {
+ $( "#d2" ).remove();
+ });
+</script>
 </div>
 
 </br>
+
+<div id="d3">
+3
+</div>
+
+</br>
+
+<div id="4">
+4
+</div>
+
+<br/>
+
+<div id="5">
+5
+</div>
+</div>
+
+<br/>
+
 
 <div id="corners2">
 <div id="3">
-<textarea id="area1" rows="1">Lab3 </textarea>
-<button> + </button>
-</div>
-</div>
+<textarea id="t6" rows="1">Lab3 </textarea>
+<button id="b6"> + </button>
+<script>
 
+    $("#b6").click(function(){
+        $('#d3').replaceWith('<div id="#3"><label>'+ $("#t6").val() +' </label><button id="b3">-</button></div>');
+    });
+</script>
+</div>
+</div>
 </body>
 </html>
-
