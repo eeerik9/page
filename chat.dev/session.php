@@ -1,6 +1,7 @@
 <?php
 require_once("../db/connectdb.php");
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
+var_dump(__LINE__);
 $mydb = new db();
 $mydb->db_set("localhost", "recon_qss", "recon_qss");
 $connection = $mydb->db_connect();
