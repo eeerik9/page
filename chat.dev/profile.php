@@ -9,9 +9,24 @@
   <link href="style.css" rel="stylesheet" type="text/css">
   </script>
   <script type="text/javascript"
-   src="http://code.jquery.com/jquery-1.10.2.min.js">
+   src="http://code.jquery.com/jquery-latest.js">
   </script>
+  <script>
+   $(document).ready(function(){
+    setInterval(function() {
+     $("#text1").load("chattext.php");
+     $("#chat").animate({ scrollTop: $(document).height() }, "fast");
+    }, 10);
+   });
 
+  </script>
+  <script>
+   $(document).ready(function(){
+    setInterval(function() {
+     $("#refresh").load("logged.php");
+    }, 100);
+    });
+  </script> 
  </head>
  <body>
   <div id="all">
@@ -26,29 +41,9 @@
     </div>
 
  <div id="chat" scrolled="true">
-  <div id="text">
-   Chatting:<br />
-   <?php
-   session_start();
-   $time = time ();
-
-   $result = mysql_query("SELECT * FROM msgs ORDER BY timestamp ASC");
-   while ($row = mysql_fetch_assoc($result)) {    
-    $username = $row['username'];
-    $from_to = explode("->", $username);
-
-    $timestamp = $row['timestamp']; // 2016-04-09 09:56:24
-    $date_time = explode(" ", $timestamp); // creates array
-    $timestamp = $date_time[1];
-                                                     
-    $msg = $row['msg'];
-                                                    
-    echo " <B>".$from_to[0].'</B> <small>'.$timestamp."</small><br/>";
-    echo $msg."<br/><br/>";
-   }
-
-   ?>
+  <div id="text1">
   </div>
+   
  </div>
 
  <div id="write">
@@ -77,21 +72,9 @@
 </div>
 
 <div id="logged">
- <div id="text">
+ <div id="text2">
   <div id="refresh">
   </div>
-
- <script>
-  function loadlink(){
-   $('#refresh').load('logged.php');
-  }
-  loadlink(); // This will run on page load
-  setInterval(function(){
-   loadlink() // this will run after every 3 seconds
-  }, 3000);
- </script>
-
-
 <!-- setInterval(
     $("#refresh").load("logged.php"), 3000); -->
 
