@@ -1,0 +1,7 @@
+Apache 2.4
+Restart apache conf file in /etc/apache2/sites-enabled:
+sudo apachectl restart
+
+Install ssl mod in apache to support https:
+sudo a2enmod ssl
+
