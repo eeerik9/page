@@ -1,5 +1,5 @@
 <?php
-	require_once('connectdb.php');
+	require_once('../db/connectdb.php');
 	$conn = connect_db();
 	// var_dump($_POST);
 	

@@ -1,5 +1,5 @@
 <?php
-	require_once('connectdb.php');
+	require_once('../db/connectdb.php');
 	session_start();
 	$error = '';
 	echo "1";
@@ -8,7 +8,7 @@
 			$error = "Username or Password is invalid";
 			echo "2";
 		} else {
-
+		 	echo "3";
 			$conn = connect_db();
 			
 			$username = $_POST['username'];
@@ -18,7 +18,7 @@
 			$password = escape_fields($password);
 			// var_dump($username, __LINE__);
 			// var_dump($password, __LINE__);
-			
+		        echo "4";	
 			$query = mysql_query("SELECT * FROM users WHERE username='$username' and password='$password'",$conn);
 			var_dump($query);			
 			$rows = mysql_num_rows($query);
