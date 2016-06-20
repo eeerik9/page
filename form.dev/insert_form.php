@@ -93,4 +93,5 @@ if ($database) {
 mysql_close($link);
 }
 }
+header( 'Location: index.php' ) ;
 ?>

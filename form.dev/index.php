@@ -1,4 +1,5 @@
 <?php
+include("show_forum.php");
 echo '
 <html>
  <head>
