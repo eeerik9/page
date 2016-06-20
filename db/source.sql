@@ -56,6 +56,12 @@ username VARCHAR(30) NOT NULL,
 timestamp TIMESTAMP
 );
 
+DROP TABLE IF EXISTS formular;
+CREATE TABLE formular (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+text VARCHAR(500) NOT NULL,
+timestamp TIMESTAMP
+);
 
 
 
