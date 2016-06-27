@@ -11,10 +11,7 @@ echo '
   <form action="insert_form.php" method="post">
    <textarea name="area">Area</textarea>
    <input type="submit"> 
-   <button type="button">Edit</button>
-   <button type="button">Delete</button>
   </form>
  </body>
-</html>
-';
+</html>'
 ?>
