@@ -50,12 +50,18 @@
    if (!mysql_query($sql, $link)) {
     die("Error: " . $sql . "</br>" . $link->error);
    }
-   echo "New record created successfully";
+   echo "New form names inserted into forms";
+   
+  $sql = "CREATE TABLE $name (   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                                    text VARCHAR(500) NOT NULL,
+                                    timestamp TIMESTAMP
+                                )"; 
+   if (!mysql_query($sql, $link)) {     
+    die("Error: " . $sql . "</br>" . $link->error);
+   }
+   echo "New form successfully created named: " . $name;
    mysql_close($link);
   }
  }     
-/*
-DROP TABLE IF EXISTS formular;                                                                                                                                                                 CREATE TABLE formular (                                                                                                                                                                        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,                                                                                                                                                 text VARCHAR(500) NOT NULL,                                                                                                                                                                    timestamp TIMESTAMP                                                                                                                                                                            ); 
-*/
-// header( 'Location: index.php' );
+header( 'Location: index.php' );
 ?>

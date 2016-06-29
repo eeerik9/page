@@ -18,13 +18,25 @@
 
    echo "<p>Successfully connected to the database '" . $database . "'</p>\n"; 
    // Check table formular
-   $formular = $_POST['form_name'];
+   $formular = "forms_names";
    $to_edit = $_POST['to_edit'];
    if (isset($_POST['remove'])){
+    // select table name
+    $sql = "SELECT * FROM `$formular` WHERE id='$to_edit'";     
+    $result = mysql_query($sql,$link);     
+    if ($result) {     echo "Record selected successfully"; } else {     echo "Error selecting record:" . $link->error; }
+    $row = mysql_fetch_array($result);
+    $table_name = $row['name'];
+    // delete table name from forms_names
     $sql = "DELETE FROM `$formular` WHERE id='$to_edit'";
     $result = mysql_query($sql,$link);
     if ($result === TRUE) {     echo "Record deleted successfully"; } else {     echo "Error deleting record:" . $link->error; }
-    header("Location: form.php");
+    
+    $sql = "DROP TABLE $table_name";
+    $result = mysql_query($sql,$link);
+    if ($result === TRUE) {     echo "Table dropped"; } else {     echo "Error dropping table:" . $link->error; }
+
+    header("Location: index.php");
    }
    if (isset($_POST['edit'] )){
     $sql = "SELECT * FROM `$formular` WHERE id='$to_edit'";     
@@ -33,7 +45,7 @@
     
     $row = mysql_fetch_array($result);
     echo '
-    <form action="edit_item.php" method="post">    <textarea name="edit_area">'. $row["text"].'</textarea> <input type="hidden" name="to_edit" value="'.$_POST['to_edit'].'"> <input type="hidden" name="form_name" value="'.$formular.'"><input type="submit">    </form> ';
+    <form action="edit_form.php" method="post">    <textarea name="edit_area">'. $row["name"].'</textarea> <input type="hidden" name="to_edit" value="'.$_POST['to_edit'].'"><input type="submit">    </form> ';
    }
   }
  }

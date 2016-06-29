@@ -13,6 +13,8 @@ echo '
    <input type="submit" value="Upload Image" name="submit"> </form>
   <form action="insert_item.php" method="post"> Text to upload:</br>
    <textarea name="area">Text to upload: </textarea>
+   <label>Label: '.$_POST['form_name'].'</label>
+   <input type="hidden" name="form_name" value="'.$_POST['form_name'].'">
    <input type="submit" value="Upload Text"> 
   </form>
  </body>

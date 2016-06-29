@@ -47,7 +47,7 @@ if ($database) {
         }
    
 }
-
+/*
 if ($database) {
     $dbcheck = mysql_select_db("$database");
         if (!$dbcheck) {
@@ -73,7 +73,7 @@ if ($database) {
         }
    
 }
-
+*/
 if ($database) {
     $dbcheck = mysql_select_db("$database");
         if (!$dbcheck) {
@@ -81,9 +81,9 @@ if ($database) {
         }else{
             echo "<p>Successfully connected to the database '" . $database . "'</p>\n";
             // Check table formular
-            $formular = "formular";
+            $formular = $_POST['form_name'];
             $text = $_POST['area'];
-            $sql = "INSERT INTO formular (text, timestamp) 
+            $sql = "INSERT INTO $formular (text, timestamp) 
                    VALUES ('$text', now())";
             if (!mysql_query($sql, $link)) {
              die("Error: " . $sql . "</br>" . $link->error);
@@ -93,5 +93,5 @@ if ($database) {
 mysql_close($link);
 }
 }
-header( 'Location: index.php' ) ;
+header( 'Location: form.php' ) ;
 ?>
