@@ -20,7 +20,7 @@ if ($database) {
                 echo "<p>Available forms:</p>\n";
                 echo "<pre>\n";
                 while ($row = mysql_fetch_row($result)) {
-                    echo $row[0] .", ".  $row[1]. ", " . $row[2] . "   ";
+                    echo $row[0] . ", " . $row[2] . "   ";
 		    echo '<form action="delete_item.php" method="post" id="'.$row[0].'"><label>'. $row[1].'</label> <input type="hidden" name="to_edit" value="'.$row[0].'"><button type="submit" form="'.$row[0].'" name ="remove" value="Remove">Remove</button><button type="submit" form="'.$row[0].'" name="edit" value="Edit">Edit</button></form>';
 		    echo "</br>";
                 }
@@ -29,6 +29,8 @@ if ($database) {
                 echo "<p>The database '" . $database . "' contains no tables.</p>\n";
                 echo mysql_error();
             }
+
+	    	
         }
    
 }

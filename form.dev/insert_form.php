@@ -62,7 +62,7 @@ if ($database) {
                 echo "<p>Available forms:</p>\n";
                 echo "<pre>\n";
                 while ($row = mysql_fetch_row($result)) {
-                    echo $row[0] .", ".  $row[1]. ", " . $row[2] . "\n";
+                    echo $row[0] . ", " . $row[2] . "\n";
 
                 }
                 echo "</pre>\n";
