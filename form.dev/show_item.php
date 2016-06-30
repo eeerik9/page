@@ -1,11 +1,11 @@
 <?php
+include 'files/form_name.php';
 $servername = "localhost";
  $username = "recon_qss";
  $password = "recon_qss";
  $database = "database1";
  // Create connection 
  $link = mysql_connect("$hostname", "$username", "$password");
-
 if ($database) { 
     $dbcheck = mysql_select_db("$database");
         if (!$dbcheck) {
@@ -13,8 +13,8 @@ if ($database) {
         }else{
             echo "<p>Successfully connected to the database '" . $database . "'</p>\n";
             // Check table formular
-	    echo "This is table name: ". $_POST['form_name'];
-            $formular = $_POST['form_name'];
+	    echo "This is table name: ". $form_name;
+            $formular = $form_name;
             $sql = "SELECT id, text, timestamp FROM`$formular`";
             $result = mysql_query($sql);
             if (mysql_num_rows($result) > 0) {
@@ -35,4 +35,5 @@ if ($database) {
         }
    
 }
+
 ?>

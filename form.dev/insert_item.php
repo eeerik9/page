@@ -1,4 +1,5 @@
 <?php
+ include ("files/form_name.php");
  $servername = "localhost"; 
  $username = "recon_qss"; 
  $password = "recon_qss"; 
@@ -81,7 +82,7 @@ if ($database) {
         }else{
             echo "<p>Successfully connected to the database '" . $database . "'</p>\n";
             // Check table formular
-            $formular = $_POST['form_name'];
+            $formular = $form_name;
             $text = $_POST['area'];
             $sql = "INSERT INTO $formular (text, timestamp) 
                    VALUES ('$text', now())";
