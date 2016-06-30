@@ -10,7 +10,7 @@
  //
  $time = time ();
  $result = mysql_query("SELECT * FROM msgs ORDER BY timestamp ASC", $connection);
- while ($row = mysql_fetch_assoc($result)) {    
+ while ($row = mysql_fetch_array($result)) {    
   $username = $row['username'];
   $from_to = explode("->", $username);
   $timestamp = $row['timestamp']; // 2016-04-09 09:56:24
