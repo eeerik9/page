@@ -1,4 +1,106 @@
 <pre>
+Postgres db:
+<code>
+# pkg install postgres93-server postgres93-client postgres93-contrib php55-pgsql
+
+Enable PostgreSQL to start at system boot in /etc/rc.conf.
+# echo 'postgresql_enable="YES"' >> /etc/rc.conf
+
+Initialize the PostgreSQL database cluster for the first time.
+# /usr/local/etc/rc.d/postgresql initdb
+/usr/local/etc/rc.d/postgresql initdb
+The files belonging to this database system will be owned by user "pgsql".
+This user must also own the server process.
+
+The database cluster will be initialized with locale C.
+The default text search configuration will be set to "english".
+
+fixing permissions on existing directory /usr/local/pgsql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 40
+selecting default shared_buffers ... 28MB
+creating configuration files ... ok
+creating template1 database in /usr/local/pgsql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects' descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/local/bin/postgres -D /usr/local/pgsql/data
+or
+    /usr/local/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start
+
+Configure PostgreSQL to listen for database connections on all system IP addresses by adding the following line to /usr/local/pgsql/data/postgresql.conf.
+
+listen_addresses = '*'
+ 
+
+Configure PostgreSQL to use password hash authentication for all hosts and users connecting from the local network by adding the following line to the /usr/local/pgsql/data/pg_hba.conf file. NOTE: Replace 10.0.1.0/24 with your own network.
+
+host  all  all  10.0.1.0/24  md5
+ 
+# su pgsql
+
+$ createdb bedrock 
+$ psql bedrock
+bedrock=#
+
+Connect to db
+bedrock=#\c database
+List db
+\bedrock=#l 
+bedrock=#\c show the database you are connected to
+bedrock=#\d list tables in the database
+bedrock=#\q quit from database
+</code>
+
+A. You need to use following commands.
+=> adduser ‚Äì UNIX/Linux adduser command to add a user to /etc/passwd file
+
+=> psql => It is a terminal-based front-end to PostgreSQL.
+
+=> CREATE USER ‚Äì Adds a new user to a PostgreSQL database cluster.
+
+=> CREATE DATABASE ‚Äì create a new database
+
+=> GRANT ALL PRIVILEGES ‚Äì define access privileges
+
+Procedure to add a user to PostgreSQL database
+To create a normal user and an associated database you need to type the following commands. The easiest way to use is to create a Linux / UNUX IDENT authentication i.e. add user tom to UNIX or Linux system first.
+
+<code>
+# adduser user
+# passwd user
+# su - pgsql
+$ psql -d template1 -U postgres
+template1=# CREATE USER user WITH PASSWORD 'pass';
+template1=# CREATE DATABASE database
+template1=# GRANT ALL PRIVILEGES ON DATABASE database to user;
+template1=# \q
+$ psql -d database -U user
+Welcome to psql 7.4.16, the PostgreSQL interactive terminal.
+Type:  \\copyright for distribution terms
+       \\h for help with SQL commands
+       \\? for help on internal slash commands
+       \\g or terminate with semicolon to execute query
+       \\q to quit
+user> 
+</code>
+
+
 -
 Web based ssh client on the server
  you can put into your server and access your server via https protocol
@@ -338,7 +440,7 @@ VIRTUAL CONSOLE
  ALT+F2-F8 =accesses virtual consoles
  in /etc/ttys is configured the number of virtual consoles, to disable one put comment in front of it
  Changing console resolution
-  The first command is called ì vidcontrol ì and you would issue it as
+  The first command is called ‚Äú vidcontrol ‚Äú and you would issue it as
 <code>
 $ vidcontrol -i mode 
 </code>
@@ -346,12 +448,12 @@ $ vidcontrol -i mode
 <code>
 $ vidcontrol MODE_xxx 
 </code>
-  Where ìxxxî is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
+  Where ‚Äúxxx‚Äù is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
   Once you have the correct resolution you can do.
 <code>
-$ allscreens=îMODE_xxxî
+$ allscreens=‚ÄùMODE_xxx‚Äù
 </code>
-  and put this in ì /etc/rc.conf ì to be persistent on reboot.
+  and put this in ‚Äú /etc/rc.conf ‚Äú to be persistent on reboot.
  
 INSTALL BASH to FreeBSD 9
 <code>
@@ -367,3 +469,4 @@ $ pkg delete bash
 
   
 </pre>
+
