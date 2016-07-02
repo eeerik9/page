@@ -68,15 +68,15 @@ bedrock=#\q quit from database
 </code>
 
 A. You need to use following commands.
-=> adduser – UNIX/Linux adduser command to add a user to /etc/passwd file
+=> adduser - UNIX/Linux adduser command to add a user to /etc/passwd file
 
 => psql => It is a terminal-based front-end to PostgreSQL.
 
-=> CREATE USER – Adds a new user to a PostgreSQL database cluster.
+=> CREATE USER - Adds a new user to a PostgreSQL database cluster.
 
-=> CREATE DATABASE – create a new database
+=> CREATE DATABASE - create a new database
 
-=> GRANT ALL PRIVILEGES – define access privileges
+=> GRANT ALL PRIVILEGES - define access privileges
 
 Procedure to add a user to PostgreSQL database
 To create a normal user and an associated database you need to type the following commands. The easiest way to use is to create a Linux / UNUX IDENT authentication i.e. add user tom to UNIX or Linux system first.
@@ -440,7 +440,7 @@ VIRTUAL CONSOLE
  ALT+F2-F8 =accesses virtual consoles
  in /etc/ttys is configured the number of virtual consoles, to disable one put comment in front of it
  Changing console resolution
-  The first command is called “ vidcontrol “ and you would issue it as
+  The first command is called " vidcontrol " and you would issue it as
 <code>
 $ vidcontrol -i mode 
 </code>
@@ -448,12 +448,12 @@ $ vidcontrol -i mode
 <code>
 $ vidcontrol MODE_xxx 
 </code>
-  Where “xxx” is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
+  Where "xxx" is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
   Once you have the correct resolution you can do.
 <code>
-$ allscreens=”MODE_xxx”
+$ allscreens="MODE_xxx"
 </code>
-  and put this in “ /etc/rc.conf “ to be persistent on reboot.
+  and put this in " /etc/rc.conf " to be persistent on reboot.
  
 INSTALL BASH to FreeBSD 9
 <code>
