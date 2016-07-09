@@ -84,8 +84,8 @@ if ($database) {
             // Check table formular
             $formular = $form_name;
             $text = $_POST['area'];
-            $sql = "INSERT INTO $formular (text, timestamp) 
-                   VALUES ('$text', now())";
+            $sql = "INSERT INTO $formular (text, timestamp, ispic) 
+                   VALUES ('$text', now(), 0)";
             if (!mysql_query($sql, $link)) {
              die("Error: " . $sql . "</br>" . $link->error);
           

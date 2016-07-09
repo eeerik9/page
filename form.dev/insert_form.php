@@ -54,7 +54,8 @@
    
   $sql = "CREATE TABLE $name (   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     text VARCHAR(500) NOT NULL,
-                                    timestamp TIMESTAMP
+                                    timestamp TIMESTAMP,
+				    ispic INT(1) UNSIGNED NOT NULL
                                 )"; 
    if (!mysql_query($sql, $link)) {     
     die("Error: " . $sql . "</br>" . $link->error);
