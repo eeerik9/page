@@ -2,7 +2,6 @@
  include("db_connect.php");
  // Establishing Connection with Server by passing server_name, user_id and password as a parameter
  $link = get_link();
- if ($link) {echo "OK</br>";} else {echo "KO</br>";}
  session_start();// Starting Session
  // Storing Session
  $user_check=$_SESSION['login_user'];

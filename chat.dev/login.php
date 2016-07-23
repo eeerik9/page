@@ -15,13 +15,13 @@
   $password = pg_escape_string($password);
   // Get db connection
   $link = get_link();
-  if($link) {echo "OK</br>";} else {echo "KO</br>";}
+  //if($link) {echo "OK</br>";} else {echo "KO</br>";}
   // Check if user exists
   $ret = pg_query(
    $link,
    "SELECT * FROM login WHERE password = '{$password}' AND username = '{$username}'"
   );
-  if ($ret) {echo "OK</br>";} else {echo "KO</br>";} 
+  //if ($ret) {echo "OK</br>";} else {echo "KO</br>";} 
   // Check number of selected rows 
   $num_rows = pg_num_rows($ret); 
   if ($num_rows == 1) {

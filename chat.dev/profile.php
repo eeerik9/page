@@ -58,7 +58,7 @@
   <div  style="width:100%">
 
    <form action="send.php" method="post" id ="target">
-    <textarea rows="6" placeholder="text to write" name="msg_area" onkeypress="sendMsg(event)"  style="width:100%; background-color:transparent;"></textarea><br>
+    <textarea rows="3" placeholder="text to write" name="msg_area" onkeypress="sendMsg(event)"  style="width:100%; background-color:transparent;"></textarea><br>
 
     <input id ="submit_but" name="submit" type="submit" value="Send" style=" display: block; width: 100%;" >
    
