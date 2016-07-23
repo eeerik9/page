@@ -1,28 +1,25 @@
 <?php
- require_once("../db/connectdb.php");
+ include("db_connect.php");
  session_start();
  //send a message
  //username in form $from->$to
  $from = $_SESSION['login_user'];
  $to = 'all';
- 
  if (strcmp($to, '') !== 0) {
   $msg = $_POST['msg_area'];
-  $msg = stripslashes($msg);
+  $msg = pg_escape_string($msg);
 
-  // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-  $mydb = new db();
-  $mydb->db_set("localhost", "recon_qss", "recon_qss");
-  $connection = $mydb->db_connect();
-  // $connection = mysql_connect("localhost", "eeerik9", "nikanika");
-  // Selecting Database
-  $mydb->db_change("database1");
-  $msg = mysql_real_escape_string($msg);
-
+  //Get link to db
+  $link = get_link();
   if (strcmp($msg, '') !== 0) {
    $username = $from."->".$to;
-   mysql_query("INSERT INTO msgs (username, msg) VALUES ('$username', '$msg')");
+   $ret = pg_query(
+    $link,
+    "INSERT INTO msgs (username, msg) 
+    VALUES ('{$username}', '{$msg}')"
+   );
   }
+  pg_close($link); 
  }
  header('Location: profile.php');
 ?>

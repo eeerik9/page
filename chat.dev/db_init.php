@@ -11,13 +11,26 @@
  } else {
   echo "Opened database successfully</br>";
  }
- 
  $sql =<<<EOF
-  DROP TABLE IF EXISTS login;                                     
+  DROP TABLE IF EXISTS login;                    
   CREATE TABLE login (
    id SERIAL,
    username CHAR(30) NOT NULL,
    password CHAR(30) NOT NULL
+  );
+ 
+  DROP TABLE IF EXISTS login_sessions;
+  CREATE TABLE login_sessions (
+   id SERIAL,
+   username CHAR(30) NOT NULL
+  );
+
+  DROP TABLE IF EXISTS msgs;
+  CREATE TABLE msgs (
+   id SERIAL,
+   username CHAR(30) NOT NULL,
+   msg CHAR(256) NOT NULL,
+   modtime timestamp DEFAULT current_timestamp
   );
 EOF;
 
@@ -32,8 +45,11 @@ EOF;
   INSERT INTO login (username, password)
   VALUES ('erik', 'erik');
   INSERT INTO login (username, password)
+  VALUES ('all1', 'all1');
+  INSERT INTO login (username, password)
+  VALUES ('nana', 'nana');
+  INSERT INTO login (username, password)
   VALUES ('all', 'all');
-
 EOF;
 
  $ret = pg_query($db, $sql);
@@ -57,8 +73,6 @@ EOF;
 $sql=<<<EOF
  SELECT * from login;
 EOF;
-
- 
 
 $ret = pg_query($db, $sql);
  if (!$ret){
@@ -91,7 +105,7 @@ $ret = pg_query($db, $sql);
  echo "operation done successfully</br>";
  
  $sql =<<<EOF
-  DELETE from login where ID=2;
+  DELETE from login where id=2;
 EOF;
 
  $ret = pg_query($db, $sql);
@@ -101,9 +115,6 @@ EOF;
    echo "Record deleted </br>";
   }
 
-
-  
- 
  pg_close($db);
   
 
