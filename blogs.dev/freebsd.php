@@ -1,8 +1,8 @@
 <pre>
 Postgres db:
 <code>
-# pkg install postgres93-server postgres93-client postgres93-contrib php55-pgsql
-
+# pkg install postgres95-server postgres95-client postgres95-contrib
+...
 Enable PostgreSQL to start at system boot in /etc/rc.conf.
 # echo 'postgresql_enable="YES"' >> /etc/rc.conf
 
@@ -65,42 +65,8 @@ List db
 bedrock=#\c show the database you are connected to
 bedrock=#\d list tables in the database
 bedrock=#\q quit from database
+$
 </code>
-
-A. You need to use following commands.
-=> adduser - UNIX/Linux adduser command to add a user to /etc/passwd file
-
-=> psql => It is a terminal-based front-end to PostgreSQL.
-
-=> CREATE USER - Adds a new user to a PostgreSQL database cluster.
-
-=> CREATE DATABASE - create a new database
-
-=> GRANT ALL PRIVILEGES - define access privileges
-
-Procedure to add a user to PostgreSQL database
-To create a normal user and an associated database you need to type the following commands. The easiest way to use is to create a Linux / UNUX IDENT authentication i.e. add user tom to UNIX or Linux system first.
-
-<code>
-# adduser user
-# passwd user
-# su - pgsql
-$ psql -d template1 -U postgres
-template1=# CREATE USER user WITH PASSWORD 'pass';
-template1=# CREATE DATABASE database
-template1=# GRANT ALL PRIVILEGES ON DATABASE database to user;
-template1=# \q
-$ psql -d database -U user
-Welcome to psql 7.4.16, the PostgreSQL interactive terminal.
-Type:  \\copyright for distribution terms
-       \\h for help with SQL commands
-       \\? for help on internal slash commands
-       \\g or terminate with semicolon to execute query
-       \\q to quit
-user> 
-</code>
-
-
 -
 Web based ssh client on the server
  you can put into your server and access your server via https protocol
@@ -440,7 +406,7 @@ VIRTUAL CONSOLE
  ALT+F2-F8 =accesses virtual consoles
  in /etc/ttys is configured the number of virtual consoles, to disable one put comment in front of it
  Changing console resolution
-  The first command is called " vidcontrol " and you would issue it as
+  The first command is called “ vidcontrol “ and you would issue it as
 <code>
 $ vidcontrol -i mode 
 </code>
@@ -448,12 +414,12 @@ $ vidcontrol -i mode
 <code>
 $ vidcontrol MODE_xxx 
 </code>
-  Where "xxx" is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
+  Where “xxx” is the three digit number of the video size of your choice, you may have to test a few, in order to find the right size.
   Once you have the correct resolution you can do.
 <code>
-$ allscreens="MODE_xxx"
+$ allscreens=”MODE_xxx”
 </code>
-  and put this in " /etc/rc.conf " to be persistent on reboot.
+  and put this in “ /etc/rc.conf “ to be persistent on reboot.
  
 INSTALL BASH to FreeBSD 9
 <code>
@@ -469,4 +435,3 @@ $ pkg delete bash
 
   
 </pre>
-
