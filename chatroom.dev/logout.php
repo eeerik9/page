@@ -10,6 +10,6 @@ pg_query(
 );
 
 if(session_destroy()) {
-  header("Location: index.php"); // Redirecting To Home Page
+  header("Location: chatlogin.php"); // Redirecting To Home Page
 }
 ?>

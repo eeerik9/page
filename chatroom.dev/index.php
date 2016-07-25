@@ -1,30 +1,12 @@
 <?php
-include('login.php'); // Includes Login Script
-
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
-}
-?>
-<!DOCTYPE html>
+echo '
 <html>
-<head>
-<title>Login Form in PHP with Session</title>
-<link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="main">
-<h1>PHP Login Session Example</h1>
-<div id="login">
-<h2>Login Form</h2>
-<form action="" method="post">
-<label>UserName :</label>
-<input id="name" name="username" placeholder="username" type="text">
-<label>Password :</label>
-<input id="password" name="password" placeholder="**********" type="password">
-<input name="submit" type="submit" value=" Login ">
-<span><?php echo $error; ?></span>
-</form>
-</div>
-</div>
+<body>';
+echo "http_host "; var_dump($_SERVER["HTTP_HOST"]);echo "</br>http_user_agent ";var_dump($_SERVER["HTTP_USER_AGENT"]);echo "</br>server_addr ";var_dump($_SERVER["SERVER_ADDR"]); echo "</br>server_port "; var_dump($_SERVER["SERVER_PORT"]); echo "</br>request_uri ";var_dump($_SERVER["REQUEST_URI"]);echo "</br>"; 
+
+echo '
+<a href="chatlogin.php">Chat</a>
 </body>
-</html>
+</html>';
+?>
+

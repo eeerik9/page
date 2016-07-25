@@ -14,6 +14,6 @@
  $login_session =$row['username'];
  pg_close($link);
  if(!isset($login_session)){
-  header('Location: index.php'); // Redirecting To Home Page
+  header('Location: chatlogin.php'); // Redirecting To Home Page
  }
 ?>
