@@ -21,6 +21,14 @@
    $formular = $_POST['form_name'];
    $to_edit = $_POST['to_edit'];
    if (isset($_POST['remove'])){
+
+    $sql = "SELECT * FROM `$formular` WHERE id='$to_edit'";     
+    $result = mysql_query($sql,$link);     
+    if ($result) {     echo "Record selected successfully"; } else {     echo "Error selecting record:" . $link->error; }
+    
+    $row = mysql_fetch_array($result);
+    if ($row["ispic"] == 1) { unlink($row["text"]);}
+
     $sql = "DELETE FROM `$formular` WHERE id='$to_edit'";
     $result = mysql_query($sql,$link);
     if ($result === TRUE) {     echo "Record deleted successfully"; } else {     echo "Error deleting record:" . $link->error; }
@@ -32,8 +40,10 @@
     if ($result) {     echo "Record selected successfully"; } else {     echo "Error selecting record:" . $link->error; }
     
     $row = mysql_fetch_array($result);
+    $edited = "nil";
+    if ($row["ispic"] == 1) {$edited = $row["text"];}
     echo '
-    <form action="edit_item.php" method="post">    <textarea name="edit_area">'. $row["text"].'</textarea> <input type="hidden" name="to_edit" value="'.$_POST['to_edit'].'"> <input type="hidden" name="form_name" value="'.$formular.'"><input type="submit">    </form> ';
+    <form action="edit_item.php" method="post">    <textarea name="edit_area">'. $row["text"].'</textarea> <input type="hidden" name="to_edit" value="'.$_POST['to_edit'].'"> <input type="hidden" name="edited" value="'.$edited.'"> <input type="hidden" name="form_name" value="'.$formular.'"><input type="submit">    </form> ';
    }
   }
  }

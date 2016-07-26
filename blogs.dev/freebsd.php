@@ -1,4 +1,72 @@
 <pre>
+Postgres db:
+<code>
+# pkg install postgres95-server postgres95-client postgres95-contrib
+...
+Enable PostgreSQL to start at system boot in /etc/rc.conf.
+# echo 'postgresql_enable="YES"' >> /etc/rc.conf
+
+Initialize the PostgreSQL database cluster for the first time.
+# /usr/local/etc/rc.d/postgresql initdb
+/usr/local/etc/rc.d/postgresql initdb
+The files belonging to this database system will be owned by user "pgsql".
+This user must also own the server process.
+
+The database cluster will be initialized with locale C.
+The default text search configuration will be set to "english".
+
+fixing permissions on existing directory /usr/local/pgsql/data ... ok
+creating subdirectories ... ok
+selecting default max_connections ... 40
+selecting default shared_buffers ... 28MB
+creating configuration files ... ok
+creating template1 database in /usr/local/pgsql/data/base/1 ... ok
+initializing pg_authid ... ok
+initializing dependencies ... ok
+creating system views ... ok
+loading system objects' descriptions ... ok
+creating conversions ... ok
+creating dictionaries ... ok
+setting privileges on built-in objects ... ok
+creating information schema ... ok
+vacuuming database template1 ... ok
+copying template1 to template0 ... ok
+copying template1 to postgres ... ok
+
+WARNING: enabling "trust" authentication for local connections
+You can change this by editing pg_hba.conf or using the -A option the
+next time you run initdb.
+
+Success. You can now start the database server using:
+
+    /usr/local/bin/postgres -D /usr/local/pgsql/data
+or
+    /usr/local/bin/pg_ctl -D /usr/local/pgsql/data -l logfile start
+
+Configure PostgreSQL to listen for database connections on all system IP addresses by adding the following line to /usr/local/pgsql/data/postgresql.conf.
+
+listen_addresses = '*'
+ 
+
+Configure PostgreSQL to use password hash authentication for all hosts and users connecting from the local network by adding the following line to the /usr/local/pgsql/data/pg_hba.conf file. NOTE: Replace 10.0.1.0/24 with your own network.
+
+host  all  all  10.0.1.0/24  md5
+ 
+# su pgsql
+
+$ createdb bedrock 
+$ psql bedrock
+bedrock=#
+
+Connect to db
+bedrock=#\c database
+List db
+\bedrock=#l 
+bedrock=#\c show the database you are connected to
+bedrock=#\d list tables in the database
+bedrock=#\q quit from database
+$
+</code>
 -
 Web based ssh client on the server
  you can put into your server and access your server via https protocol

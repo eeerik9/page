@@ -1,4 +1,129 @@
 <pre>
+Clone linux disk 
+Whether you’re setting up multiple computers or doing a full backup, 
+cloning hard drives is a common maintenance task. Don’t bother burning a new boot CD or paying for new software
+ - you can do it easily with your Ubuntu Live CD.
+
+Not only can you do this with your Ubuntu Live CD, you can do it right out of the box – no additional software needed! 
+The program we’ll use is called dd, and it’s included with pretty much all Linux distributions. 
+dd is a utility used to do low-level copying – rather than working with files, it works directly on the raw data on a storage device.
+
+Note: dd gets a bad rap, because like many other Linux utilities, 
+if misused it can be very destructive. If you’re not sure what you’re doing, 
+you can easily wipe out an entire hard drive, in an unrecoverable way.
+
+Of course, the flip side of that is that dd is extremely powerful, 
+and can do very complex tasks with little user effort. If you’re careful, and follow these instructions closely, 
+you can clone your hard drive with one command.
+
+We’re going to take a  hard drive partition ext4 that we’ve been using and copy it to a new hard drive, 
+which hasn’t been formatted yet.
+
+To make sure that we’re working with the right drives, we’ll open up a terminal (Applications > Accessories > Terminal) and enter in the following command
+<code>
+$ sudo fdisk -l
+Disk /dev/sda: 250.1 GB, 250059350016 bytes
+255 heads, 63 sectors/track, 30401 cylinders, total 488397168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x239b50ee
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048      718847      358400    7  HPFS/NTFS/exFAT
+/dev/sda2          718848    88609472    43945312+   7  HPFS/NTFS/exFAT
+/dev/sda3        88610814   371210239   141299713    5  Extended
+/dev/sda5        88610816   129626440    20507812+  83  Linux
+/dev/sda6       129628160   136835071     3603456   82  Linux swap / Solaris
+/dev/sda7       136837120   371210239   117186560   83  Linux
+
+Disk /dev/sdb: 500.1 GB, 500107862016 bytes
+255 heads, 63 sectors/track, 60801 cylinders, total 976773168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x7353edef
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *        2048      718847      358400    7  HPFS/NTFS/exFAT
+/dev/sdb2          718848   421025791   210153472    7  HPFS/NTFS/exFAT
+/dev/sdb3       421025792   763779071   171376640    7  HPFS/NTFS/exFAT
+/dev/sdb4       763781118   976771071   106494977    5  Extended
+/dev/sdb5       763781120   968959999   102589440   83  Linux
+/dev/sdb6       968962048   976771071     3904512   82  Linux swap / Solaris
+</code>
+
+And now we want to make a clone of Linux from /dev/sdb5 to /dev/sda7 which is not partitioned yet.
+Note: while you can copy a smaller drive to a larger one, you can’t copy a larger drive to a smaller one with the method described below.
+
+Now the fun part: using dd. The invocation we’ll use is:
+<code>
+$ sudo dd if=/dev/sdb5 of=/dev/sda7
+</code>
+In this case, we’re telling dd that the input file (“if”) is /dev/sdb, and the output file (“of”) is /dev/sda. If your drives are quite large,
+this can take some time, but in our case it took just less than a minute.
+
+Note: you may have to restart your computer to be able to mount the newly cloned drive.
+
+And that’s it…If you exercise caution and make sure that you’re using the right drives as the input file and output file, dd isn’t anything to be scared of.
+ Unlike other utilities, dd copies absolutely everything from one drive to another – that means that you can even recover files deleted from the original drive in the clone!
+
+--
+Configure network interfaces wireless static
+<code>
+$ vim /etc/network/interfaces
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+
+auto wlan0
+#iface wlan0 inet dhcp
+iface wlan0 inet static
+        address -ip-
+        gateway 192.168.1.1
+        netmask 255.255.255.0
+        network 192.168.1.0
+        broadcast 192.168.1.255
+        dns-nameservers 192.168.1.1 8.8.8.8
+        wpa-ssid -ssid-
+        wpa-scan_ssid 1
+        wpa-psk -pass-
+~
+
+$ sudo reboot                             
+</code>
+
+--
+Shellinabox
+ Install
+<code>
+$ sudo apt-get install shellinabox
+$ sudo vim /etc/default/shellinabox
+</code>
+
+--
+In the directory /etc/NetworkManager/system-connections/ reside all network connection configurations for Linux network manager 
+
+--
+SFTP
+ connect to sftp server
+<code>
+$ sftp user@ftp.server.com
+sftp>
+</code>
+ list and change your local dir, user lls and lcd or ! ls ! cd
+<code>
+sftp> lls .
+.
+..
+dir
+sftp> lcd dir
+</code>
+ to change in ftp server use ls, cd as usual
+ put filename to put file
+ get filename to get file
+
+--
 PATH variable
 Example
  update path variable for your new executalbe which is located in your $HOME directory
@@ -91,6 +216,19 @@ Install mysql database
 <code>
 #apt-get install mysql-server mysql-client
 ...
+</code>
+
+Enable remote access to mysql
+ Make sure line skip-networking is commented or removed and add the following
+<code>
+ ..
+$ vim /etc/mysql/my.cnf
+$ bind-address=YOUR-SERVER-IP
+</code>
+
+ Connect to remote mysql database
+<code>
+mysql -h HOSt -uUSER -pPASSWORD DATABASE
 </code>
 
 Reseting mysql root passwofd (if forgotten)
@@ -210,6 +348,12 @@ mysql> SHOW GLOBAL VARIABLES LIKE 'local_infile';
 | local_infile  | OFF   |
 +---------------+-------+
 1 row in set (0.00 sec)
+</code>
+
+Backup a single database
+<code>
+# mysqldump -u root -ptmppassword sugarcrm > sugarcrm.sql
+# mysqldump -u root -p[root_password] [database_name] > dumpfilename.sql
 </code>
 
 
@@ -386,6 +530,8 @@ mods-[enabled,available]/: These directories are similar in function to the site
  As you can see, Apache configuration does not take place in a single monolithic file,
  but instead happens through a modular design where new files can be added and modified as needed.
 <br>
+To change apache2 listening ports change line PORT in /etc/apache2/ports.conf to whatever neccessary and then change your default directory and and port for your index in /etc/apache2/sites-available/000-default.conf to suit your needs, enjoy!
+
 PORT FORWARDING
 Oracle VirtualBox Manager -> System -> Settings ->Network
 Adapter 1
@@ -991,6 +1137,14 @@ To make one of the windows full screen and out of the dual screen mode use the f
 <code>
 :new /path/to/myfile
 </code>
+ Run shell in vi
+<code>
+:sh
+</code>
+ Display the file name in vi
+<code>
+:echo @%
+</code>
 Using vi macros
  To enter a macro, type:
   q&#60;letter&#62;&#60;commands&#62;q
@@ -1559,4 +1713,4 @@ $ ls -ali
 <br>
 20150408,01:10pm
 Starting a blog about examples in linux and unix...
-</pre>						
+</pre>							

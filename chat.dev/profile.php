@@ -15,9 +15,17 @@
    $(document).ready(function(){
     setInterval(function() {
      $("#text1").load("chattext.php");
-     $("#chat").animate({ scrollTop: $(document).height() }, "fast");
     }, 10);
    });
+ 
+ /*$(document).ready(function(){
+    setInterval(function() {
+     var d = $('#text1');
+     $("#chat").animate({ scrollTop: $(document).height() }, "fast");
+    }, 5000);
+   });
+*/
+
 
   </script>
   <script>
@@ -40,7 +48,7 @@
      </div>
     </div>
 
- <div id="chat" scrolled="true">
+ <div id="chat">
   <div id="text1">
   </div>
    
@@ -49,8 +57,8 @@
  <div id="write">
   <div  style="width:100%">
 
-   <form action="send.php" method="post" id ="target" >
-    <textarea rows="6" placeholder="text to write" name="msg_area" onkeypress="sendMsg(event)"  style="width:100%; background-color:transparent;"></textarea><br>
+   <form action="send.php" method="post" id ="target">
+    <textarea rows="3" placeholder="text to write" name="msg_area" onkeypress="sendMsg(event)"  style="width:100%; background-color:transparent;"></textarea><br>
 
     <input id ="submit_but" name="submit" type="submit" value="Send" style=" display: block; width: 100%;" >
    

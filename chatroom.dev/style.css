@@ -1,0 +1,53 @@
+#all {
+ width: 47%;
+ height: 100%;
+ background: white;
+}
+#left {
+float: left;
+ width: 70%;
+ height : 100%;
+ background: red;
+}
+#me {
+ border-radius:4px 4px 4px 4px;
+ margin: 2%;
+ width: 96%;
+ height: 10%;
+ background: yellow;
+}
+
+#chat {
+ border-radius:4px 4px 4px 4px;
+ margin: 2%;
+ width: 96%;
+ height: 72%;
+ background: purple;
+ overflow-y: scroll
+}
+
+#write {
+ border-radius:4px 4px 4px 4px;
+ margin: 2%;
+ width: 96%;
+ height: 12%;
+ background: blue;
+}
+
+#logged {
+ border-radius:4px 4px 4px 4px;
+ float: right;
+ width: 26%;
+ height: 96%;
+ margin: 2%;
+ background: green;
+}
+
+#text {
+ padding: 2%;
+}
+
+
+body {
+ background: grey;
+}

@@ -1,24 +1,18 @@
 <?php
-require_once("../db/connectdb.php");
+include("db_connect.php");
 echo "loaded...<br />";
-$mydb = new db();
-// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-//$connection = mysql_connect("localhost", "eeerik9", "nikanika");
-$mydb->db_set("localhost", "recon_qss", "recon_qss");
-$connection = $mydb->db_connect();
-// Selecting Database
-$mydb->db_change("database1");
-
+$link = get_link();
 // SQL query to fetch information of registerd users and finds user match.
+$ret = pg_query(
+        $link,
+        "SELECT * FROM login_sessions"
+       );
 
-$result = mysql_query("SELECT * FROM login_sessions", $connection);
-
-echo "<br />";
-while ($row = mysql_fetch_assoc($result)) {
-
-    echo $row['username'] . "<br />";
+echo "<br/>";
+while ($row =pg_fetch_assoc($ret)) {
+    echo $row['username'] . "<br/>";
 }
-
+pg_close($link);
 ?>
 
 

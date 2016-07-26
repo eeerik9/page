@@ -13,7 +13,7 @@ if ($database) {
         }else{
             echo "<p>Successfully connected to the database '" . $database . "'</p>\n";
             // Check table formular
-            $formular = "forms_names";
+            $formular = "forms_names"; 
             $sql = "SELECT id, name FROM`$formular`";
             $result = mysql_query($sql);
             if (mysql_num_rows($result) > 0) {
