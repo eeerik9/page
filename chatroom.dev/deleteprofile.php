@@ -4,6 +4,10 @@
  $link = get_link();
  $ret = pg_query(
   $link,
+  "DELETE FROM login_sessions WHERE username='{$login_session}'"
+ );
+ $ret = pg_query(
+  $link,
   "DELETE FROM login WHERE username='{$login_session}'"
  );
  $ret = pg_query(
