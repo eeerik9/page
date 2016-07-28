@@ -10,7 +10,7 @@ $ret = pg_query(
 
 echo "<br/>";
 while ($row =pg_fetch_assoc($ret)) {
-    echo $row['username'] . "<br/>";
+    echo '<a href="profileuserdisplay.php?user='.trim($row['username']).'" target="_top">'.trim($row['username']).'</a><br/>';
 }
 pg_close($link);
 ?>

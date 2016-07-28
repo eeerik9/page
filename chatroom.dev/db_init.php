@@ -24,6 +24,18 @@
    id SERIAL,
    username CHAR(30) NOT NULL
   );
+  
+  DROP TABLE IF EXISTS profile;
+  CREATE TABLE profile (
+    id SERIAL,
+    username CHAR(30) NOT NULL,
+    whoami CHAR(1024),
+    resources CHAR(512),
+    give CHAR(256),
+    receive CHAR(256),
+    photo CHAR(32),
+    contact CHAR(256)
+  );
 
   DROP TABLE IF EXISTS msgs;
   CREATE TABLE msgs (
