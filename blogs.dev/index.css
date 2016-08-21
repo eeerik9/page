@@ -25,8 +25,8 @@
 
  text-align: justify;
 
- margin-left: 40%;
- margin-right: 17%;
+ margin-left: 45%;
+ margin-right: 5%;
 
  height: 94%;
  overflow-y: auto;
@@ -125,7 +125,7 @@ color: white;
  display: inline-block;
  background-color: gray;
  text-align: justify;
- width: 96%
+ width:96% 
 }
 
 /* Demo credits stuff */
