@@ -1,4 +1,19 @@
 <pre>
+Play mp3 files in terminal:
+<code>
+mpg123
+</code>
+Play ogg files in terminal:
+<code>
+ogg123
+</code>
+Convert mp3 to ogg file format:
+<code>
+mp32ogg
+</code>
+
+--
+Icecast Blog:
 <code>
 https://blog.iandreev.com/?p=1522
 </code>
@@ -29,6 +44,7 @@ cp icecast.xml.sample icecast.xml
 Change the location, the admin email, change the passwords for source-password, relay-password and admin-password under authentication. Its a good practice to change the default admin user as well. In addition, change the log directory under logdir and uncomment the user and the group that will run icecast daemon.
 
 This is how my icecast.xml looks like.
+<xmp>
 <icecast>
     <!-- location and admin are two arbitrary strings that are e.g. visible
          on the server info page of the icecast web interface
@@ -209,7 +225,7 @@ This is how my icecast.xml looks like.
         </changeowner>
     </security>
 </icecast>
-
+</xmp>
 Create the log directory and change the ownership.
 <code>	
 mkdir /var/log/icecast
@@ -257,6 +273,7 @@ Lets configure the first radio station and youll see how easy is to configure th
 Make sure you have enough bandwidth to support this. Use the following link to determine your needs.
 
 Finally, here is my liquid-playlist.xml file.
+<xmp>
 <?xml version="1.0"?>
 <ices>
     <!-- run in background -->
@@ -357,6 +374,7 @@ Finally, here is my liquid-playlist.xml file.
  
     </stream>
 </ices>
+</xmp>
 
 At this point, we need to put some Ogg files that we want to stream. In my case, Ive put them under /home/radio/liquid for the first stream. Now, go to:
 <code>	
