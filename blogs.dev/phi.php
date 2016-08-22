@@ -6,6 +6,10 @@ LatexIT.add('p',true);
 </script>
 </head>
 <body>
+http://www.cut-the-knot.org/do_you_know/GoldenRatio.shtml </br>
+http://www.phimatrix.com/ </br>
+</br></br>
+
 <p>$\Phi = \frac{13}{8} + \sum\limits_{n=0}^\infty \frac{(-1)^{n+1}(2n+1)!}{(n+2)!n!4^{2n+3}}$ </p>
 <br>
 <p> $\Phi = \sqrt{1+\sqrt{1+\sqrt{1+\ldots}}}$</p>
