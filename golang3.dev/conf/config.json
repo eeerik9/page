@@ -1,0 +1,9 @@
+{
+  "RedirectURL":"http://localhost:9000/Token",
+  "ClientID":"@!E0E2.8150.B9D2.14A0!0001!6A42.EB0A!0008!F0DB.FB94",
+  "ClientSecret":"aa5e8de6-06bd-434b-ab30-639d3f122b7e",
+  "ITunesSecret":"be998a19031a467d88d43d06567ca705",
+  "BaseURI":"localhost:9000",
+  "ESBURI":"localhost:9000",
+  "GluuURI": "https://idp.d.aws.economist.com/"
+}
