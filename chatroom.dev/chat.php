@@ -32,7 +32,7 @@
    $(document).ready(function(){
     setInterval(function() {
      $("#refresh").load("logged.php");
-    }, 100);
+    }, 1000);
     });
   </script> 
  </head>
@@ -43,8 +43,11 @@
 
     <div id="me">
      <div id="text">
-      <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
-      <b id="logout"><a href="logout.php">Log Out</a></b>
+      <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>;
+     <b><a href="profileuserdisplay.php"> MyProfile</a></b>;
+     <b><a href="allprofiles.php"> AllProfiles</a></b>;
+     <b id="logout"><a href="logout.php">Logout</a></b>;
+     <b><a href="deleteprofile.php">DeleteAll</a></b>
      </div>
     </div>
 

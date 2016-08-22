@@ -2,7 +2,7 @@
 include('login.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user'])){
-header("location: profile.php");
+header("location: chat.php");
 }
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ header("location: profile.php");
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<a href="index.php">Home</a>
 <div id="main">
 <h1>PHP Login Session Example</h1>
 <div id="login">

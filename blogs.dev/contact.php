@@ -1,8 +1,8 @@
 Please contact me when in doubt about any information content. Whether it is not true or syntactically incorrect, it does not matter, I will try to update it appropriately as soon as possible.<br>
 Write me in case of your further interest in Library material or in case you would like to get your own access. <br>
 <br>
-Name: Lux Erik<br>
-Mail: eeerik9.net16.net@gmail.com<br>
+Name: XXXXX<br>
+Mail: eeerik9@gmail.com<br>
 Icq: 209929029<br>
 <br><br><br>
 
@@ -41,7 +41,7 @@ if (isset($_POST['Submit1']))
 			$email_body = "$name.$visitor_email.$message";
 				
 				
-			$to = "eeerik9.net16.net@gmail.com";
+			$to = "eeerik9@protonmail.com";
  
   			$headers = "From: $email_from \r\n";
  

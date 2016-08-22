@@ -33,7 +33,7 @@
     "INSERT INTO login_sessions (username)
     VALUES ( '{$username}' )"
    );
-   header("Location: profile.php"); // Redirecting To Other Page
+   header("Location: chat.php"); // Redirecting To Other Page
   } else {
    $error = "Username or Password is invalid";
   }

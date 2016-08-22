@@ -21,5 +21,5 @@
   }
   pg_close($link); 
  }
- header('Location: profile.php');
+ header('Location: chat.php');
 ?>

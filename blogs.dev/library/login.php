@@ -1,47 +1,31 @@
 <?php
-session_start(); // Starting Session
-$error=''; // Variable To Store Error Message
-if (isset($_POST['submit'])) {
-if (empty($_POST['username']) || empty($_POST['password'])) {
-$error = "Username or Password is invalid";
-}
-else
-{
-// Define $username and $password
-$username=$_POST['username'];
-$password=$_POST['password'];
-// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-$connection = mysql_connect("localhost", "eeerik9", "nikanika");
-// To protect MySQL injection for Security purpose
-$username = stripslashes($username);
-$password = stripslashes($password);
-$username = mysql_real_escape_string($username);
-$password = mysql_real_escape_string($password);
-//hash the password
-$password = hash('sha256', $password);
-// Selecting Database
-$db = mysql_select_db("eeerik9", $connection);
-// SQL query to fetch information of registerd users and finds user match.
-$query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
-$query2 =  mysql_query("select username from login where password='$password' AND username='Guest'", $connection);
-$rows = mysql_num_rows($query);
-$rows2 = mysql_num_rows($query2);
-if ($rows == 1 || $rows2 == 1) {
- if (isset($_POST['accept'])) {
-  $nick = $username;
-  if ($rows2 ==1) {
-   $username = 'Guest';
+ session_start(); 
+ $error=''; 
+ if (isset($_POST['submit'])) {
+  if (empty($_POST['username']) || empty($_POST['password'])) {
+   $error = "Username or Password is invalid";
+  } else {
+   $username=$_POST['username'];
+   $password=$_POST['password'];
+   // Establishing Connection with Server by passing server_name, user_id and password as a parameter
+   $link = mysql_connect("localhost", "recon_qss", "recon_qss");
+   // To protect MySQL injection for Security purpose
+   $username = mysql_real_escape_string(stripslashes($username));
+   $password = mysql_real_escape_string(stripslashes($password));
+   // Selecting Database
+   $db = mysql_select_db("database1", $link);
+   // SQL query to fetch information of registerd users and finds user match.
+   $query = mysql_query("select * from login where password='$password' AND username='$username'", $link);
+   $rows = mysql_num_rows($query);
+   if ($rows == 1 ) {
+    $nick = $username;
+    $_SESSION['login_user']=$username; // Initializing Session
+    $_SESSION['nick_user']=$nick;
+    header("location: profile.php"); // Redirecting To Other Page
+   } else { 
+    $error =  "Username or Password is invalid";
   }
-  $_SESSION['login_user']=$username; // Initializing Session
-  $_SESSION['nick_user']=$nick;
-  header("location: profile.php"); // Redirecting To Other Page
- } else { 
-  $error = "Conditions are not agreed on";
  }
-}  else {
- $error =  "Username or Password is invalid";
-}
-mysql_close($connection); // Closing Connection
-}
+ mysql_close($link); // Closing Connection
 }
 ?>
