@@ -1,6 +1,11 @@
 <?php
  include("db_connect.php");
  session_start();
+ if (isset($_SESSION['chatroom'])){
+  $msgs = $_SESSION['chatroom'];
+ } else {
+  $msgs = "msgs";
+ }
  //send a message
  //username in form $from->$to
  $from = $_SESSION['login_user'];
@@ -15,7 +20,7 @@
    $username = $from."->".$to;
    $ret = pg_query(
     $link,
-    "INSERT INTO msgs (username, msg) 
+    "INSERT INTO $msgs (username, msg) 
     VALUES ('{$username}', '{$msg}')"
    );
   }

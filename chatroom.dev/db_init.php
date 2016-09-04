@@ -44,6 +44,14 @@
    msg CHAR(256) NOT NULL,
    modtime timestamp DEFAULT current_timestamp
   );
+  
+  DROP TABLE IF EXISTS chatrooms;
+  CREATE TABLE chatrooms (
+   id SERIAL,
+   chatname CHAR(30) NOT NULL,
+   users CHAR(256) NOT NULL
+  );
+
 EOF;
 
  $ret = pg_query($db, $sql);

@@ -1,11 +1,16 @@
 <?php
  include("db_connect.php");
- echo "Chatting...<br />";
+ session_start();
+ if (isset($_SESSION['chatroom'])) {
+  $msgs = $_SESSION['chatroom'];
+ } else {
+  $msgs = "msgs";
+ }
  $link = get_link();
  $time = time ();
  $ret = pg_query(
   $link,
-  "SELECT * FROM msgs ORDER BY modtime DESC"
+  "SELECT * FROM $msgs ORDER BY modtime DESC"
  );
  while ($row = pg_fetch_array($ret)) {    
   $username = $row['username'];

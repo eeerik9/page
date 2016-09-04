@@ -2,6 +2,9 @@
  include('session.php');
  session_start();
  $_SESSION['page1opens']++;
+ if (isset($_GET['na'])){
+  $_SESSION['chatroom'] = $_GET['na'];
+ }
 ?>
 <html>
  <head>
@@ -44,10 +47,12 @@
     <div id="me">
      <div id="text">
       <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>;
-     <b><a href="profileuserdisplay.php"> MyProfile</a></b>;
-     <b><a href="allprofiles.php"> AllProfiles</a></b>;
+     <b><a href="home.php"> Home</a>
+     <a href="profileuserdisplay.php"> MyProfile</a>
+     <a href="allprofiles.php"> AllProfiles</a></b>
      <b id="logout"><a href="logout.php">Logout</a></b>;
-     <b><a href="deleteprofile.php">DeleteAll</a></b>
+     <b><a href="deleteprofile.php">DeleteAll</a></b>;</br>
+     <b> <?php echo "Chatroom: ". $_SESSION['chatroom']; ?> </b></br>
      </div>
     </div>
 

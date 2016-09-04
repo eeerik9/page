@@ -17,7 +17,7 @@ echo '
 <html>
 <body>
 <b><h1>'.$user.'</h1></b>
-<a href="chat.php">Chat</a>; <a href="allprofiles.php">AllProfiles</a>; <a href="logout.php">Logout</a></br>
+<a href="home.php">Home</a>; <a href="allprofiles.php">AllProfiles</a>; <a href="logout.php">Logout</a></br>
 
 <form action="profileuserchange.php" method="post" id="profiledisplay">
 Foto:</br>
