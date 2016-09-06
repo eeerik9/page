@@ -3,9 +3,13 @@ echo '
 </br>
 <i>
 <b>Darujem Vam 2 prispevky z Vedeckej Spolocnosti Prirodny Zakon, Vladcovia ako zakladne piliere Pravdy v casti Veda. </br> </b>
-V pripade zaujmu o moju cinnost a tuzbu zmenit svet sa mozete stat clenmmi Vedeckej Spolocnosti po splneni nasledujucich podmienok;</br>
+V pripade zaujmu o moju cinnost a tuzbu zmenit svet sa mozete stat clenmmi Vedeckej Spolocnosti po splneni nasledujucich podmienok; Preferujem realne hodnoty pred fiktivnymi abstraktnymi papiermi od federalnej rezervy,
+ktore nemaju ani hodnotu papiera na ktorych su vytlacene; </br>
+- hudobny alebo umelecky prispevok v akejkolvek podobe; </br>
+- vymena kontaktu a zaroven zverejnenie odkazu, prispevku na tejto stranke; </br>
+- akekolvek zdielanie duchovnych mien (cas, pozornost); </br>
+- napady vramci komunity, realizacia zmeny; </br>
 - jednorazovy prispevok vo vyske minimalne 50 EUR; </br>
-- hudobny alebo umelecky prispevok v akejkolvek podobe vymena kontaktu a zaroven zverejnenie odkazu, prispevku na tejto stranke; </br>
 - pravidelne prispievanie na podporenie mojej cinnost v oblasti hladania Pravdy, rozsirovania materialov a postupne liecenie Matky Zeme. </br>
 </br>
 <b>Ponukam prednasky a rozhovory v nasledujucic oblastiach Prirodny Zakon, Vladcovia, Vedomie, Okult. </br></b>

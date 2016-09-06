@@ -2,6 +2,8 @@
  echo '
   <html>
    <head>
+   <title>Pravdajelenjedna</title>
+   <link rel="shortcut icon" href="images/favicon-16x16.png" />
     <style>
      body {
       line-height: 2.0;
@@ -12,6 +14,7 @@
     echo '<div id="menu">';
     include("menu.php");
     $navi_array = array(
+     "vitaj" => "vitaj.php",
      "veda" => "veda.php",
      "zdroje" => "zdroje.php",
      "informacie" => "informacie.php",
@@ -25,11 +28,11 @@
     if (isset($_GET["str"])) {
      include($navi_array[$_GET["str"]]);
     } else {
-     include("veda.php");
+     include("vitaj.php");
     }
     echo '</div>';
  echo '
    </body>
   </html>
  ';
-?>		
+?>			
