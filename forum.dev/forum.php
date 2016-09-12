@@ -22,7 +22,11 @@
     <th style="width: 60%">Tema</th>
     <th style="width: 8%">Autor</th>
     <th style="width: 8%">Pozretia</th>
-    <th style="width: 20%">Vytvorene</th>
+    <th style="width: 16%">Vytvorene</th>';
+    if (isset($_SESSION['prihlaseny'])){
+     echo '<th style="width: 4%">X</th>';
+    }
+ echo '
    </tr>
  ';
  
@@ -31,11 +35,19 @@
  $ret = mysql_query($sql, $link);
  while ($row = mysql_fetch_assoc($ret)){
  echo "<tr>";
- echo "<td>".$row['id']. "</td>";
- echo "<td>".$row['topic']. "</td>";
- echo "<td>".$row['author']. "</td>";
- echo "<td>".$row['views']. "</td>";
- echo "<td>".$row['posted']. "</td>";
+  echo "<td>".$row['id']. "</td>";
+  echo "<td>".$row['topic']. "</td>";
+  echo "<td>".$row['author']. "</td>";
+  echo "<td>".$row['views']. "</td>";
+  echo "<td>".$row['posted']. "</td>";
+ if (isset($_SESSION['prihlaseny'])){
+  echo "<td>
+         <form action='odobertemu.php' method='post'>
+          <input type='submit' name='stlacil' value='X'>
+          <input type='hidden' name='tema' value='".$row['id']."'>
+         </form>
+        </td>";
+ }
  echo "</tr>";
  }
 
