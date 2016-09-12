@@ -8,15 +8,15 @@ header("location: home.php");
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login Form in PHP with Session</title>
+<title>XXXXX Chatrooms</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <a href="index.php">Home</a>
 <div id="main">
-<h1>PHP Login Session Example</h1>
+<h1>Chatrooms</h1>
 <div id="login">
-<h2>Login Form</h2>
+<h2>Login</h2>
 <form action="" method="post">
 <label>UserName :</label>
 <input id="name" name="username" placeholder="username" type="text">
