@@ -49,7 +49,8 @@
   CREATE TABLE chatrooms (
    id SERIAL,
    chatname CHAR(30) NOT NULL,
-   users CHAR(256) NOT NULL
+   users CHAR(256) NOT NULL,
+   creator CHAR(20) NOT NULL
   );
 
 EOF;

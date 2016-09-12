@@ -20,7 +20,7 @@
   echo "Table created successfully </br>";
  }
 
- $sql = "INSERT INTO chatrooms (chatname, users) VALUES ( '{$name}', '{$users}')";
+ $sql = "INSERT INTO chatrooms (chatname, users, creator) VALUES ( '{$name}', '{$users}', '{$_SESSION['login_user']}')";
  $ret = pg_query($link, $sql);
  if (!$ret) {
   echo pg_last_error($link);

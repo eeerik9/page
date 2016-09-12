@@ -25,7 +25,8 @@
  margin: 2%;
  width: 96%;
  height: 65%;
- background:purple ;
+ background:black ;
+ color: white;
  overflow-y: scroll
 }
 
