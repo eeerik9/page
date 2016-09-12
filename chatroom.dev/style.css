@@ -13,16 +13,16 @@
 }
 #me {
  border-radius:4px 4px 4px 4px;
- margin: 2%;
+ margin: 1%;
  width: 96%;
- height: 10%;
+ height: 12%;
  background: yellow;
 }
 
 #chat {
  border-radius:4px 4px 4px 4px;
  padding: 5px;
- margin: 2%;
+ margin: 1%;
  width: 96%;
  height: 65%;
  background:black ;
@@ -32,7 +32,7 @@
 
 #chatroom {
  border-radius:4px 4px 4px 4px;
- margin: 2%;
+ margin: 1%;
  padding: 5px;
  width: 96%;
  height: 80%;
@@ -41,19 +41,20 @@
 
 #write {
  border-radius:4px 4px 4px 4px;
- margin: 2%;
+ margin: 1%;
  padding: 5px;
  width: 96%;
- height: 12%;
+ height: 13%;
+ color: white;
  background: blue;
 }
 
 #logged {
  border-radius:4px 4px 4px 4px;
  float: right;
- width: 25%;
- height: 92%;
- margin: 2%;
+ width: 27%;
+ height: 94%;
+ margin: 1%;
  padding: 5px;
  background: green;
 }
