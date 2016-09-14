@@ -5,14 +5,14 @@
  </head>
  <body>
   <center>
-   |<a href="prihlas.php">Prihlas</a>|<a href="http://pravdajelenjedna.info">Pravdajelenjedna</a>
+|<a href="http://pravdajelenjedna.info">Pravdajelenjedna</a>
 
 <?php
  session_start();
  if (isset($_SESSION['prihlaseny'])){
   echo '|<a href="odhlasit.php">Odhlas</a>|';
  } else {
-  echo '|';
+  echo '|<a href="prihlas.php">Prihlas</a>|';
  }
 ?>
  

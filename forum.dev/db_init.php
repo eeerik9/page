@@ -72,22 +72,5 @@
  }
  echo 'Table forum created successfully</br>';
  
-// Test insert
- $sql ="INSERT INTO forum_topics (name,topic,author,views) VAlUES ('Test1', 'Topic1', 'Author1', 1)";
-
- if (!mysql_query($sql, $link)) {
-  die ("Error: " .  mysql_error());
- }
- echo 'Topic1 inserted successfully</br>';
-
-// Test insert
- $sql ="INSERT INTO forum_topics (name,topic,author,views) VAlUES ('Test2', 'Topic2', 'Author2', 2)";
-
- if (!mysql_query($sql, $link)) {
-  die ("Error: " .  mysql_error());
- }
- echo 'Topic2 inserted successfully</br>';
- 
- 
  mysql_close($link);
 ?>

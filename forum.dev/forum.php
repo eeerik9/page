@@ -34,24 +34,26 @@
  $sql = "SELECT * FROM forum_topics";
  $ret = mysql_query($sql, $link);
  while ($row = mysql_fetch_assoc($ret)){
- echo "<tr>";
-  echo "<td>".$row['id']. "</td>";
-  echo "<td>".$row['topic']. "</td>";
-  echo "<td>".$row['author']. "</td>";
-  echo "<td>".$row['views']. "</td>";
-  echo "<td>".$row['posted']. "</td>";
- if (isset($_SESSION['prihlaseny'])){
-  echo "<td>
-         <form action='odobertemu.php' method='post'>
-          <input type='submit' name='stlacil' value='X'>
-          <input type='hidden' name='tema' value='".$row['id']."'>
-         </form>
-        </td>";
- }
- echo "</tr>";
+  echo "<tr>";
+   echo "<td>".$row['id']. "</td>";
+   echo "<td><a href=tema.php?n=".$row['name'].">".$row['topic']."</a></td>";
+   echo "<td>".$row['author']. "</td>";
+   echo "<td>".$row['views']. "</td>";
+   echo "<td>".$row['posted']. "</td>";
+  if (isset($_SESSION['prihlaseny'])){
+   echo "<td>
+          <form action='odobertemu.php' method='post'>
+           <input type='submit' name='stlacil' value='X'>
+           <input type='hidden' name='tema' value='".$row['id']."'>
+           <input type='hidden' name='meno' value='".$row['name']."'>
+          </form>
+         </td>";
+  }
+  echo "</tr>";
  }
 
  echo '
   </table>
  ';
+ mysql_close($link);
 ?>
