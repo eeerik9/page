@@ -7,36 +7,36 @@
  $link = get_link();
 
  $name = $_POST['chatname'];
- $name = pg_escape_string($name);
+ $name = mysql_escape_string($name);
 
  // Only creator can delete chatroom 
- $sql = "SELECT * FROM chatrooms WHERE chatname='{$name}'";
+ $sql = "SELECT * FROM chat_chatrooms WHERE chatname='{$name}'";
  
- $ret = pg_query($link, $sql);
+ $ret = mysql_query($sql,$link);
 
  if (!$ret){
-  echo pg_last_error($link);
+  echo mysql_errno($link);
  } else {
-  $row = pg_fetch_assoc($ret);
+  $row = mysql_fetch_assoc($ret);
   $logged = trim($_SESSION['login_user']);
   $creator = trim($row['creator']);
   if (strcmp($creator, $logged) == 0){   
 
-   $sql = "DELETE FROM chatrooms WHERE chatname='{$name}'";
+   $sql = "DELETE FROM chat_chatrooms WHERE chatname='{$name}'";
  
-   $ret = pg_query($link, $sql);
+   $ret = mysql_query($sql,$link);
 
    if (!$ret) {
-    echo pg_last_error($link);
+    echo mysql_errno($link);
    } else {
     echo "Chatroom removed from chatrooms </br>";
    }
 
    $sql = "DROP TABLE IF EXISTS $name";
  
-   $ret = pg_query($link, $sql);
+   $ret = mysql_query($sql, $link);
    if (!$ret) {
-    echo pg_last_error($link);
+    echo "Error: ". mysql_errno($link);
    } else {
     echo "Table deleted successfully </br>";
    }
@@ -44,7 +44,7 @@
  }
  
  // close connection to db 
- pg_close($link);
+ mysql_close($link);
 
  header('Location: home.php');
 ?>

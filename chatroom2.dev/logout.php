@@ -4,10 +4,9 @@ session_start();
 $link = get_link();
 $username = $_SESSION['login_user'];
 
-pg_query(
- $link,
- "DELETE FROM login_sessions WHERE username='{$username}'"
-);
+$sql = "DELETE FROM chat_login_sessions WHERE username='{$username}'";
+
+mysql_query($sql, $link);
 
 if(session_destroy()) {
   header("Location: chatlogin.php"); // Redirecting To Home Page

@@ -6,13 +6,11 @@
  // Storing Session
  $user_check=$_SESSION['login_user'];
  // SQL Query To Fetch Complete Information Of User
- $ret = pg_query(
-  $link,
-  "SELECT * FROM login WHERE username = '{$user_check}'"
- );
- $row = pg_fetch_assoc($ret);
+ $sql= "SELECT * FROM chat_login_sessions WHERE username = '{$user_check}'";
+ $ret=mysql_query($sql,$link);
+ $row = mysql_fetch_assoc($ret);
  $login_session =$row['username'];
- pg_close($link);
+ mysql_close($link);
  if(!isset($login_session)){
   header('Location: chatlogin.php'); // Redirecting To Home Page
  }

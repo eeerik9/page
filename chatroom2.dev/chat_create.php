@@ -8,22 +8,22 @@
 
  $name = $_POST['chatname'];
  $users = $_POST['chatusers'];
- $name = pg_escape_string($name);
- $users = pg_escape_string($users);
+ $name = mysql_escape_string($name);
+ $users = mysql_escape_string($users);
 
- $sql ="CREATE TABLE $name (id SERIAL,username CHAR(30) NOT NULL,msg CHAR(256) NOT NULL,modtime timestamp DEFAULT current_timestamp)";
+ $sql ="CREATE TABLE $name (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,username  VARCHAR(10) NOT NULL, msg VARCHAR(256) NOT NULL, modtime TIMESTAMP)";
  
- $ret = pg_query($link, $sql);
+ $ret = mysql_query($sql,$link);
  if (!$ret) {
-  echo pg_last_error($link);
+  echo "Error: ". mysql_errno($link);
  } else {
   echo "Table created successfully </br>";
  }
 
- $sql = "INSERT INTO chatrooms (chatname, users, creator) VALUES ( '{$name}', '{$users}', '{$_SESSION['login_user']}')";
- $ret = pg_query($link, $sql);
+ $sql = "INSERT INTO chat_chatrooms (chatname, users, creator) VALUES ( '{$name}', '{$users}', '{$_SESSION['login_user']}')";
+ $ret = mysql_query($sql, $link);
  if (!$ret) {
-  echo pg_last_error($link);
+  echo "Error: " . mysql_error($link);
  } else {
   echo "Chatroom inserted successfully";
  }
@@ -32,7 +32,7 @@
  echo "Users: " . $users;
 
  // close connection to db 
- pg_close($link);
+ mysql_close($link);
 
  header('Location: home.php');
 ?>

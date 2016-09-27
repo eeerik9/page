@@ -4,15 +4,13 @@
  if (isset($_SESSION['chatroom'])) {
   $msgs = $_SESSION['chatroom'];
  } else {
-  $msgs = "msgs";
+  $msgs = "chat_msgs";
  }
  $link = get_link();
  $time = time ();
- $ret = pg_query(
-  $link,
-  "SELECT * FROM $msgs ORDER BY modtime DESC"
- );
- while ($row = pg_fetch_array($ret)) {    
+ $sql = "SELECT * FROM $msgs ORDER BY modtime DESC";
+ $ret=mysql_query($sql);
+ while ($row = mysql_fetch_array($ret)) {    
   $username = $row['username'];
   $from_to = explode("->", $username);
   $timestamp = $row['modtime']; // 2016-04-09 09:56:24
@@ -24,5 +22,5 @@
   echo " <B>".$from_to[0].'</B> <small>'.$timestamp."</small><br/>";
   echo $msg."<br/><br/>";
  }
- pg_close($link);
+ mysql_close($link);
 ?>
