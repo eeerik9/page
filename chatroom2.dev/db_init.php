@@ -42,6 +42,20 @@
  }
  echo 'User inserted sucessfully</br>';
 
+ // table loginn
+ $sql = "DROP TABLE community_login";
+ if (!mysql_query($sql, $link)) {
+  echo 'The table does not exist</br>';
+ } else {
+  echo 'Table login dropped</br>';
+ }
+ $sql ="CREATE TABLE community_login ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,username  VARCHAR(10) NOT NULL,password  VARCHAR(10) NOT NULL)";
+ 
+ if (!mysql_query($sql, $link)) {
+  die ("Error: " .  mysql_error());
+ }
+ echo 'Table login created successfully</br>';
+ 
  // table login_sessions
  $sql = "DROP TABLE chat_login_sessions";
  if (!mysql_query($sql, $link)) {
