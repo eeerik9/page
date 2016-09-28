@@ -2,34 +2,29 @@
 include("session.php");
 session_start();
 
-$username = pg_escape_string($_POST["username"]);
-$whoami =  pg_escape_string($_POST["whoami"]);
-$resources = pg_escape_string($_POST["resources"]);
-$give = pg_escape_string($_POST["give"]);
-$receive = pg_escape_string($_POST["receive"]);
-$contact =  pg_escape_string($_POST["contact"]);
+$username = mysql_escape_string($_POST["username"]);
+$whoami =  mysql_escape_string($_POST["whoami"]);
+$resources = mysql_escape_string($_POST["resources"]);
+$give = mysql_escape_string($_POST["give"]);
+$receive = mysql_escape_string($_POST["receive"]);
+$contact =  mysql_escape_string($_POST["contact"]);
 $link = get_link();
-$ret = pg_query(
- $link,
- "SELECT * from profile WHERE username ='{$username}'"
-);
-if ($ret){ echo "OK</br>";} else {echo "KO</br>";}
+$sql= "SELECT * from chat_profile WHERE username ='{$username}'";
+$ret= mysql_query($sql, $link);
 
-$num_rows = pg_num_rows($ret);
+if ($ret){ echo "OK</br>";} else {echo "KO</br>";}
+$num_rows = mysql_num_rows($ret);
 if($num_rows == 0) {
- $ret = pg_query(
-  $link,
-  "INSERT INTO profile (username, whoami, resources, give, receive, contact)
-  VALUES ('{$login_session}', '{$whoami}', '{$resources}','{$give}', '{$receive}', '{$contact}')"
- );
+ $sql="INSERT INTO chat_profile (username, whoami, resources, give, receive, contact)
+         VALUES ('{$login_session}', '{$whoami}', '{$resources}','{$give}', '{$receive}', '{$contact}')";
+ $ret = mysql_query($sql, $link);
+ 
   echo "INSERT: ";if ($ret) {echo "OK</br>";} else {echo "KO</br>";}
 } else {
-  $ret = pg_query(
-  $link,
-  "UPDATE profile SET whoami='{$whoami}',resources='{$resources}' ,give='{$give}',receive='{$receive}',contact='{$contact}' WHERE username='{$username}'"
- );
+  $sql ="UPDATE chat_profile SET whoami='{$whoami}',resources='{$resources}' ,give='{$give}',receive='{$receive}',contact='{$contact}' WHERE username='{$username}'";
+  $ret = mysql_query($sql, $link);
  echo "UPDATE: ";if ($ret) {echo "OK</br>";} else {echo "KO</br>";} 
 } 
-pg_close($link);
+mysql_close($link);
 header('Location: profileuserdisplay.php');
 ?>

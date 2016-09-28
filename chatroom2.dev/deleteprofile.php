@@ -2,18 +2,12 @@
  include("session.php");
  session_start();
  $link = get_link();
- $ret = pg_query(
-  $link,
-  "DELETE FROM login_sessions WHERE username='{$login_session}'"
- );
- $ret = pg_query(
-  $link,
-  "DELETE FROM login WHERE username='{$login_session}'"
- );
- $ret = pg_query(
-  $link,
-  "DELETE FROM profile WHERE username='{$login_session}'"
- );
+ $sql="DELETE FROM chat_login_sessions WHERE username='{$login_session}'";
+ mysql_query($sql, $link);
+ $sql="DELETE FROM chat_login WHERE username='{$login_session}'";
+ mysql_query($sql, $link);
+ $sql="DELETE FROM chat_profile WHERE username='{$login_session}'";
+ mysql_query($sql,$link);
  $target_dir ="uploads/".trim($login_session)."/";
  $files = glob($target_dir . '*', GLOB_MARK);
  foreach($files as $file){
@@ -22,5 +16,5 @@
  rmdir($target_dir);
  session_destroy();
  header('Location: index.php');
- pg_close($link);
+ mysql_close($link);
 ?>

@@ -8,11 +8,9 @@ $user = $login_session;
 $user = $_GET['user'];
 }
 
-$ret = pg_query(
-$link,
-"SELECT * FROM profile WHERE username='{$user}'"
-);
-$rows = pg_fetch_assoc($ret);
+$sql="SELECT * FROM chat_profile WHERE username='{$user}'";
+$ret = mysql_query($sql, $link);
+$rows = mysql_fetch_assoc($ret);
 echo '
 <html>
 <body>
@@ -46,6 +44,6 @@ if (strcmp(trim($user), trim($login_session)) == 0){ echo '
 echo '
 </body>
 </html> ';
-pg_close($link);
+mysql_close($link);
 ?>
 

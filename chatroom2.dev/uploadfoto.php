@@ -44,27 +44,21 @@
    echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";     
   
    $link = get_link();
-   $ret = pg_query(
-    $link,
-    "SELECT * FROM profile WHERE username='{$login_session}'"
-   );
-   $num_rows = pg_num_rows($ret);
+   $sql= "SELECT * FROM chat_profile WHERE username='{$login_session}'";
+   $ret= mysql_query($sql, $link);
+   $num_rows = mysql_num_rows($ret);
    if ($num_rows == 0) {
-    $ret = pg_query(
-     $link,
-     "INSERT INTO profile (username, photo)
-     VALUES ('{$login_session}','{$target_file}')"
-    );
+     $sql="INSERT INTO chat_profile (username, photo)
+             VALUES ('{$login_session}','{$target_file}')";
+     $ret=mysql_query($sql, $link);
     echo "INSERT: "; if($ret) {echo "OK</br>";} else {echo "KO</br>";}
    } else {
-    $ret = pg_query(
-     $link,
-     "UPDATE profile SET photo='{$target_file}' WHERE username='{$login_session}'"
-    );
+    $sql="UPDATE chat_profile SET photo='{$target_file}' WHERE username='{$login_session}'";
+    $ret=mysql_query($sql, $link);
    echo "UPDATE: "; if($ret) {echo "OK</br>";} else {echo "KO</br>";}
    }
 
-   pg_close($link);                                          
+   mysql_close($link);                                          
    header( 'Location: profileuserchange.php') ; 
 
   } else {         

@@ -3,11 +3,10 @@ include("session.php");
 session_start;
 $link = get_link();
 
-$ret = pg_query(
- $link,
- "SELECT * FROM profile WHERE username='{$login_session}'"
-);
-$rows = pg_fetch_assoc($ret);
+$sql="SELECT * FROM chat_profile WHERE username='{$login_session}'";
+$ret =mysql_query($sql, $link);
+
+$rows = mysql_fetch_assoc($ret);
 
 echo '
 
@@ -36,5 +35,6 @@ echo '
 </form>
 </body>
 </html>
-' 
+'; 
+mysql_close($link);
 ?>
