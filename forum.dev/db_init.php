@@ -42,8 +42,8 @@
 // table login
  $sql = "DROP TABLE forum_login";
  if (!mysql_query($sql, $link)) {
-  die ("Error: " . mysql_error());
- }
+  echo "Do not panic, table does not exit";
+ } 
  echo 'Table login dropped</br>';
  $sql ="CREATE TABLE forum_login ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,author  VARCHAR(10) NOT NULL,number  VARCHAR(10) NOT NULL)";
 
@@ -62,7 +62,7 @@
 // table form
  $sql = "DROP TABLE forum_topics";
  if (!mysql_query($sql, $link)) {
-  die ("Error: " . mysql_error());
+  echo "Do not panic, the table does not exit</br>"; 
  }
  echo 'Table topics dropped</br>';
  $sql ="CREATE TABLE forum_topics ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, name VARCHAR(20) NOT NULL, topic VARCHAR(500) NOT NULL, author  VARCHAR(10) NOT NULL,views INT(6) NOT NULL, posted TIMESTAMP)";
