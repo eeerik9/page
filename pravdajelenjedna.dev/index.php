@@ -15,12 +15,14 @@
     include("menu.php");
     $navi_array = array(
      "vitaj" => "vitaj.php",
+     "ktosom" => "ktosom.php",
      "veda" => "veda.php",
      "zdroje" => "zdroje.php",
      "informacie" => "informacie.php",
      "preco" => "preco.php",
      "slovnik" => "slovnik.php",
      "prispej" => "prispej.php",
+     "dakujem" => "dakujem.php",
      "vedeckaspolocnost" =>"vedeckaspolocnost.php",
     );
     echo '</div>';

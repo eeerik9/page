@@ -50,12 +50,12 @@ echo '
 </table>
 </br>
 ';
-echo '|';
+echo '<small>|';
 for ($x = 0; $x < 7; $x++) {
     echo  $content[$x][0].' |';
 }
 echo '
-</br><b><i>
+</small></br><b><i>
 <a href='.$content[$current][1].' > '.$content[$current][0].' </a>
 </i></b></br></br>
 <div>

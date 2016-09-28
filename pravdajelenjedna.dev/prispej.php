@@ -20,5 +20,10 @@ Prednasky sa zaoberaju osobnou zodpovednostou a su obzvlast vhodne pre Armadu, P
 </br>
 Icq: 209929029</br>
 Email: eeerik9@protonmail.com</br>
+<center>
+<div style="background-color: black">
+<img src="images/seedoflife1.png" eight="280" width="280"/>
+</center>
+</div>
 ';
 ?>

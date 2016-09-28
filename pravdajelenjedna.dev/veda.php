@@ -44,16 +44,16 @@ echo '
 </table>
 </br>
 ';
-echo '|';
+echo '<small>|';
 for ($x = 0; $x < 2; $x++) {
     echo  $content[$x][0].' |';
 }
 echo 
-'</br><b><i>
+'</small></br><b><i>
 '.$content[$current][0] 
 .'</i></b></br></br>
 <div>
-<object data='.$content[$current][1].' type="application/pdf" width="860px" height="540px">
+<object data='.$content[$current][1].' type="application/pdf" width="860px" height="540px" />
 </div>
 </center>
 ';

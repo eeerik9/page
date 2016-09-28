@@ -1,0 +1,69 @@
+#all {
+ border-radius: 4px 4px 4px 4px;
+ width: 100%;
+ height: 100%;
+ background: white;
+}
+#left {
+ border-radius 4px 4px 4px 4px;
+ float: left;
+ width: 70%;
+ height : 100%;
+ background: red;
+}
+#me {
+ border-radius:4px 4px 4px 4px;
+ margin: 1%;
+ width: 96%;
+ height: 12%;
+ background: yellow;
+}
+
+#chat {
+ border-radius:4px 4px 4px 4px;
+ padding: 5px;
+ margin: 1%;
+ width: 96%;
+ height: 65%;
+ background:black ;
+ color: white;
+ overflow-y: scroll
+}
+
+#chatroom {
+ border-radius:4px 4px 4px 4px;
+ margin: 1%;
+ padding: 5px;
+ width: 96%;
+ height: 80%;
+ background: orange;
+}
+
+#write {
+ border-radius:4px 4px 4px 4px;
+ margin: 1%;
+ padding: 5px;
+ width: 96%;
+ height: 13%;
+ color: white;
+ background: blue;
+}
+
+#logged {
+ border-radius:4px 4px 4px 4px;
+ float: right;
+ width: 24%;
+ height: 94%;
+ margin: 1%;
+ padding: 5px;
+ background: green;
+}
+
+#text {
+ padding: 2%;
+}
+
+
+body {
+ background: grey;
+}

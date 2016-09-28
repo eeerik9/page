@@ -1,6 +1,6 @@
 <?php
 
-$items_num = 26;
+$items_num = 27;
 
 if (!isset($_POST["current"])){
  $current = 0;
@@ -51,7 +51,8 @@ ludi.","Max Igan"),
  23 => array("Liecenie", "Ak mas akykolvek problem navonok vo Vesmire, vyliec ho v sebe.", "Richard Grant"),
  
  24 => array("Zmena", "Vacsina ludi v emocnej situaci mysli v emociach zapisanych v situaciach v dectve, analyzuje zivot vramci danej emocie, co robim, co mam robit. Ale ak sa clovek ide do pozmeneneho stavu a stane sa nikym, nicim, nikde a v ziadnom case. To je moment v ktorom sa stavaju rydzim vedomim.", "Joe Dispenza"),
- 25 => array("Tvoj zivot, tvoja cesta", "Tvoj zivot je tvoja cesta. Nie tych idiotov, ktori ti vravia, co je mozne, co mozes robit a co si mozes mysliet. Je to len a len tvoja cesta, tvoja vlastna cesta !!!", "Bill Hicks"),
+ 25 => array("Imunita", "Je tvoja zodpovednost si udrzat svoje obranne zlozky, Imunitu, s tebou. Vzdanim sa imunity v prospech par zvolenych sa nielen stanes slabym, ale naviac zvysujes sancu pouziatia tychto sil proti tebe samemu ako v pripade rakovinovych buniech a ich anti-telovej agendy.", "Erik Lux"),
+ 26 => array("Tvoj zivot, tvoja cesta", "Tvoj zivot je tvoja cesta. Nie tych idiotov, ktori ti vravia, co je mozne, co mozes robit a co si mozes mysliet. Je to len a len tvoja cesta, tvoja vlastna cesta !!!", "Bill Hicks"),
 );
 
 echo '
@@ -70,7 +71,7 @@ echo '
 </form>
 </tr>
 </table>
-</br>
+</br><small>
 ';
 
 for ($x = 0; $x < $items_num; $x++) {
@@ -79,12 +80,17 @@ for ($x = 0; $x < $items_num; $x++) {
 
 
 echo 
-'</br><b>
+'</small></br><b>
 '.$content[$current][0] 
 .'</b></br></br>
 <div><i>
 '.$content[$current][1].'
 </i></div></center><div align="right"><small>'.$content[$current][2].'</small></div>
+<center>
+<div style="background-color: black">
+<img src="images/seedoflife1.png" eight="280" width="280"/>
+</center>
+</div>
 ';
 
 

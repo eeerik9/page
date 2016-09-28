@@ -1,0 +1,12 @@
+<?php
+echo '
+<input name="submit" type="submit" value="<=" style="width:100"> 
+<input name="submit" type="submit" value="=>" style="width:100"> </br>
+<a href="https://app.box.com/s/77vn5tawsfz42nuy1aomivxxtqpzk9w3" > Prirodny Zakon </a>
+<div>
+<iframe width="610" height="380"
+<ilayer src="https://app.box.com/s/77vn5tawsfz42nuy1aomivxxtqpzk9w3" >
+</iframe>
+</div>
+';
+?>
