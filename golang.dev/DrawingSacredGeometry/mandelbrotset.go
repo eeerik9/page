@@ -18,8 +18,8 @@ var col color.Color
 func MandelbrotSet() {
 	//col = color.RGBA{255, 0, 0, 255} // Red
 	//HLine(10, 20, 80)
-	green := color.RGBA{0, 255, 0, 255}   // Green
-	white := color.RGBA{255, 0, 255, 255} // White
+	green := color.RGBA{0, 255, 0, 255} // Green
+	white := color.RGBA{255, 0, 0, 255} // White
 
 	for row := 0; row < height; row++ {
 		for col := 0; col < width; col++ {
@@ -50,26 +50,4 @@ func MandelbrotSet() {
 	}
 	defer f.Close()
 	png.Encode(f, img)
-}
-
-// HLine draws a horizontal line
-func HLine(x1, y, x2 int) {
-	for ; x1 <= x2; x1++ {
-		img.Set(x1, y, col)
-	}
-}
-
-// VLine draws a veritcal line
-func VLine(x, y1, y2 int) {
-	for ; y1 <= y2; y1++ {
-		img.Set(x, y1, col)
-	}
-}
-
-// Rect draws a rectangle utilizing HLine() and VLine()
-func Rect(x1, y1, x2, y2 int) {
-	HLine(x1, y1, x2)
-	HLine(x1, y2, x2)
-	VLine(x1, y1, y2)
-	VLine(x2, y1, y2)
 }

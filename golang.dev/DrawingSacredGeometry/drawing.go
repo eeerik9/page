@@ -13,5 +13,6 @@ func timeTrack(start time.Time, name string) {
 func main() {
 
 	defer timeTrack(time.Now(), "Function main")
-	MandelbrotSet()
+	// MandelbrotSet()
+	JuliaSet()
 }
