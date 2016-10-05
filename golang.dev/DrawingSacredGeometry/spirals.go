@@ -24,6 +24,13 @@ import (
 	"os"
 )
 
+const (
+	// Radian ...
+	Radian float64 = 1
+	// Degree ...
+	Degree = (math.Pi / 180) * Radian
+)
+
 // PolarCoordinates ...
 type PolarCoordinates struct {
 	Radius float64
@@ -42,31 +49,93 @@ type CoordinatesInt struct {
 	Y int
 }
 
-var spwidth = 377
-var spheight = 233
+var spwidth = 1000
+var spheight = 1000
 var spmax = 1000
+
+const (
+	spangle = 900
+)
+
+// Spiral ...
+var Spiral [spangle]CoordinatesFloat
 
 var spimg = image.NewRGBA(image.Rect(0, 0, spwidth, spheight))
 var spcol color.Color
 
-func shiftCoordinates(cF CoordinatesFloat) CoordinatesInt {
+type spiralFunc func(float64) float64
+
+// Archimedean ...
+func Archimedean(angle float64) float64 {
+	return angle
+}
+
+// Golden ...
+func Golden(angle float64) float64 {
+	return 0.2 * math.Exp((math.Log(math.Phi)/90)*angle)
+}
+
+// GenerateSpiral ...
+func GenerateSpiral(spiral [spangle]CoordinatesFloat, f spiralFunc) [spangle]CoordinatesFloat {
+	var cF CoordinatesFloat
+	for angle := 0; angle < spangle; angle++ {
+
+		for angle >= spangle {
+
+			angle -= spangle
+		}
+		radius := f(float64(angle))
+
+		cF.Y = math.Sin(float64(angle)*Degree) * radius
+		cF.X = math.Cos(float64(angle)*Degree) * radius
+
+		spiral[angle] = cF
+	}
+	return spiral
+}
+
+// ShiftCoordinates ...
+func ShiftCoordinates(cF CoordinatesFloat) CoordinatesInt {
 	var cI CoordinatesInt
 	cI.X = int(cF.X + math.Ceil(float64(spwidth/2)))
 	cI.Y = int(cF.Y + math.Ceil(float64(spheight/2)))
 	return cI
 }
 
-// ArchimedeanSpiral ...
-func ArchimedeanSpiral() {
-	//red = color.RGBA{255, 0, 0, 255} // Red
-	// green := color.RGBA{0, 255, 0, 255} // Green
-	// white := color.RGBA{255, 0, 0, 255} // White
+// Zoom ...
+func Zoom(spiral [spangle]CoordinatesFloat, factor float64) [spangle]CoordinatesFloat {
+	for angle := 0; angle < spangle; angle++ {
+		spiral[angle].X /= factor
+		spiral[angle].Y /= factor
+	}
+	return spiral
+}
 
-	f, err := os.Create("archimedeanspiral.png")
+// ArchimedeanSpiral ...
+func ArchimedeanSpiral(spiral [spangle]CoordinatesFloat) {
+	//red := color.RGBA{255, 0, 0, 255} // Red
+	green := color.RGBA{0, 255, 0, 255} // Green
+	black := color.RGBA{0, 0, 0, 255}   // White
+
+	for x := 0; x < spwidth; x++ {
+		for y := 0; y < spheight; y++ {
+			spimg.Set(x, y, black)
+		}
+	}
+
+	var cI CoordinatesInt
+	for angle := 0; angle < spangle; angle++ {
+		cI = ShiftCoordinates(spiral[angle])
+		if cI.X >= 0 && cI.X < spwidth && cI.Y >= 0 && cI.Y < spheight {
+			spimg.Set(cI.X, cI.Y, green)
+		}
+	}
+
+	f, err := os.Create("archimedeanspiral4.png")
 	if err != nil {
 		panic(err)
 	}
 
 	defer f.Close()
-	png.Encode(f, juimg)
+	png.Encode(f, spimg)
 }

@@ -14,5 +14,9 @@ func main() {
 
 	defer timeTrack(time.Now(), "Function main")
 	// MandelbrotSet()
-	JuliaSet()
+	Spiral = GenerateSpiral(Spiral, Golden /*Archimedean*/)
+	Spiral = Zoom(Spiral, 0.1)
+
+	ArchimedeanSpiral(Spiral)
+
 }
