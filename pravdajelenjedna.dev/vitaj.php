@@ -17,7 +17,9 @@ Ako je to naozaj? To ponecham na tvoje posudenie drahy navstevnik/draha navstevn
 </br>
 <b>Ja mam Pravo predpokladat cokolvek, co vravi moj Zdravy Rozum!</b></br>
 <div style="background-color: black">
-<img src="images/seedoflife1.png" eight="280" width="280"/>
+
+<img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
 </div>
 </center>
 </i>

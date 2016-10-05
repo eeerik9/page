@@ -23,7 +23,9 @@
      "slovnik" => "slovnik.php",
      "prispej" => "prispej.php",
      "dakujem" => "dakujem.php",
+     "umenie" => "umenie.php",
      "vedeckaspolocnost" =>"vedeckaspolocnost.php",
+     "zazitky" =>"zazitky.php"
     );
     echo '</div>';
     echo '<div id="content">';

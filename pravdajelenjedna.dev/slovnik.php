@@ -10,13 +10,14 @@ Definicia - Limitovanie výroku na práve jeden význam;
 Dialektika - Kontrola mysle metodou vyberu. Utok na jednu zo stran. Hned ako jedna strana si utvori nazor ako ho vnucuje utocnik a zacne ho zastavat, je vo vojne s druhou stranou a vojna sa zacala;
 Depresia - Neschopnost organizmu prejst z expanzie do kontrakcie;
 Diagnoza - S pomocou znalosti;
+Dusa - Je stale vedoma brana k univerzalnej mysli;
 Empatia - Schopnost organizmu vcitit sa do ineho vedomeho bytia;
 Fantazia - Schopnost vytvarat falosne reality, nie v sulade s Prirodnym Zakonom;
 Frustracia - Neschopnost organizmu prejst z kontrakcie do expanzie;
 Ignorancia - Neznalost aj ked je potrebna Informacia dostupna;
 Informacia - V strukture, vo forme;
 Inteligencia - Intelekt (logika) v kombinacii s generativnym principom (kreativita, starostlivost);
-Jurisdikcia - Schopnost povedat, co je Zakon; Oblast diktovania niekoho Zakona
+Jurisdikcia - Schopnost povedat, co je Zakon; Oblast diktovania niekoho Zakona;
 Kod - System na tajnu komunikaciu, v ktorom lubovolne vybranym slovam, pismenam a symbolom  je priradeny definitivny vyznam;
 Kognitivna dizonancia - Drzania dvoch protichodnych myslienok zaroven;
 Konspiracia - Utajnenie informacie za ucelom vykoristovania tych, ktorym je dana informacia odopreta;
@@ -50,7 +51,7 @@ Spravodlivost - Je svedomie ludi a vsetkych vedomych bytosti ako celok;
 Spolocnost - organizovana skupina alebo asociacia stretavajuca sa za ucelom zdielania spolocneho zaujmu alebo aktivity. Spolocnost je urcena clenstvom;
 Stat - System kontroly, ktory je na mieste, ktory umoznuje ludom, ktory su v state mat len tie potrebne veci, aby prezilia trenuje ich, ze ak chcu viac, tak to musia urobit na ukor inych ludi ich kontrolovanim a ziskom; 
 Suveren - Nad vladou ineho; Jeden vladca v kralovstve seba;
-Svedomie - S vedomim;  =Zdravy Rozum
+Svedomie - S vedomim;  =Zdravy Rozum;
 Token - Substancia reprezentujuca abstraktnu predstavu; Stol nepotrebuje token, aby ho reprezentoval;
 Ubuntu - Zijuca filozofia alebo navigacia organizmu alebo organizmov podla Prirodneho Zakona. (V pripade organizmov sa jednotlivy organizmus sam stava suverennou prispievajucou jednotkou.) 
  Pat bodova mantra:
@@ -67,7 +68,7 @@ Vnimanie - Pohlad na Pravdu pomocou zmyslou, to co sa pohybuje meni;
 Vzdelanie - Priniest zo skryvania; Vytiahnut na svetlo;
 Vztah - Navzajom si venovana pozornost a pohyb;
 Zakon - Existujuca podmienka, ktora je zavazna a nemenna, ktora nas vsetkych zvazuje;
-Zdravy Rozum - Pocit priamo z duse;Znalost rozdielu medzi "V harmonii s Prirodou" a "V disharmonii s Prirodou".
+Zdravy Rozum - Pocit priamo z duse;Znalost rozdielu medzi "V harmonii s Prirodou" a "V disharmonii s Prirodou";
 Zlo - Destrukcia Slobody; Vsetko co zlo uci ludi je, ze maju limitovanu hodnotu;
 Zodpovednost - Schopnost odpovedat;
 Zmluva - Slub, ktory je vynutitelny Zakonom; Kriteria vynutitelnosti; 
@@ -107,11 +108,15 @@ ale
 Nie Dobro x Zlo,
 ale 
  Prirodzene x Neprirodzene
- S prirodou x Proti Prirode.
+ S Prirodou x Proti Prirode.
 
 Nie Pravica x Lavica,
 ale
  Pravo x Nepravo.
+
+Nie cervena pre dievcata x modra pre chlapcov,
+ ale cervena ako ohen x modra ako voda,
+     cerveny ako vonkajsi x modry ako vnutory,
 
 Abrahamske nabozenstva                                          x  Samanizmus 
  - Boh & Priroda su oddelene;                                   x   - Boh & Priroda su identicke;  
@@ -180,7 +185,8 @@ sa k zivotnej ceste. Prajem im vela stastia a mam ich velmi rad.
 </i></pre>
 <center>
 <div style="background-color: black">
-<img src="images/seedoflife1.png" eight="280" width="280"/>
+<img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
 </center>
 </div>
 

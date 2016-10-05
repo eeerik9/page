@@ -1,6 +1,6 @@
 <?php
 
-$items_num = 27;
+$items_num = 28;
 
 if (!isset($_POST["current"])){
  $current = 0;
@@ -53,6 +53,8 @@ ludi.","Max Igan"),
  24 => array("Zmena", "Vacsina ludi v emocnej situaci mysli v emociach zapisanych v situaciach v dectve, analyzuje zivot vramci danej emocie, co robim, co mam robit. Ale ak sa clovek ide do pozmeneneho stavu a stane sa nikym, nicim, nikde a v ziadnom case. To je moment v ktorom sa stavaju rydzim vedomim.", "Joe Dispenza"),
  25 => array("Imunita", "Je tvoja zodpovednost si udrzat svoje obranne zlozky, Imunitu, s tebou. Vzdanim sa imunity v prospech par zvolenych sa nielen stanes slabym, ale naviac zvysujes sancu pouziatia tychto sil proti tebe samemu ako v pripade rakovinovych buniech a ich anti-telovej agendy.", "Erik Lux"),
  26 => array("Tvoj zivot, tvoja cesta", "Tvoj zivot je tvoja cesta. Nie tych idiotov, ktori ti vravia, co je mozne, co mozes robit a co si mozes mysliet. Je to len a len tvoja cesta, tvoja vlastna cesta !!!", "Bill Hicks"),
+ 26 => array("Sposob (Ako?)", "Sposob sa odraza v tebe ako nekonecny zdroj tvojej inspiracie, ako zdroj tvojej vasne, tvojej mudrosti, tvojho entuziazmu, tvojej intuicie, tvojho duchovneho ohna, tvojej lasky. Sposob zoberie chaos vesmiru a vdychne don zivot a usporiada ho. Ked je sposob vyjadreny myslou, je to genius. Ked je vnimany ocami, je to krasa. Ked je citeny zmyslami, je to ladnost. Ked prijaty do srdca, je to laska. A preto dusa nie je nic co by sa dalo najst. Dusa je sposob akym veci robis.", "Wayseer"),
+
 );
 
 echo '
@@ -88,7 +90,8 @@ echo
 </i></div></center><div align="right"><small>'.$content[$current][2].'</small></div>
 <center>
 <div style="background-color: black">
-<img src="images/seedoflife1.png" eight="280" width="280"/>
+<img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
 </center>
 </div>
 ';

@@ -18,7 +18,8 @@ Slovensko nie je krajina, ale kusok papiera, predstava. Ak si myslis, ze zijes n
 <h3>Prosim?</h3>
 Ano Ja som!
 <div style="background-color: black">
-<img src="images/seedoflife1.png" eight="280" width="280"/>
+<img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
 </div>
 </center>
 </i>

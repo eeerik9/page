@@ -13,7 +13,8 @@ Veronica of the Chapman family, Walter Russell, Wilhelm Reich.
    </i>
    <center>
     <div style="background-color: black">
-     <img src="images/seedoflife1.png" eight="280" width="280"/>
+     <img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
     </div>
    </center>
    

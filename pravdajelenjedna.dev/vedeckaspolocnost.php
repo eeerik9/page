@@ -19,23 +19,35 @@ Spolocnost je dobrovolne zoskuponie podobne mienenych ludi charakterizovane clen
 Na zaklade pozorovania vesmiru okolo nas tvojimi zmyslami si vytvor novy model alebo si vylepsi existujuci, ktory nasledne aplikuj opat na 
 vesmir. V momente kedy vylepseny model neobstoji pri pozorovaniach sa vrat k predchodziemu modelu, ktory obstal. </br>
 </br>
-<b>Realita vs. Iluzia? </b></br>
-Vsetko co je realne sa neda poznat Zmyslami. Da sa to vediet iba Zdravym Rozumom. Zdravy Rozum avsak odmieta Iluziu,
+<b>Skutocnost vs. Iluzia? </b></br>
+Vsetko co je skutocne sa neda poznat Zmyslami. Da sa to vediet iba Zdravym Rozumom. Zdravy Rozum avsak odmieta Iluziu,
 ktoru poznaju zmysli. Z toho dovodu je dolezita neustala vymena a spolupraca informacii medzi Pozorovanim a 
 Modelom pomocou vhodnej obojstrannej premeny, ktoru je mozne aplikovat spatne. </br>
-Vsimni si, ze hlavna myslienka, ktoru Mainstream, Nabozenstvo, Peniaze, Media, Politika a Skola uci ludi je, ze Iluzia je realna. Avsak nic nemoze byt dalej od Pravdy.</br></br>
-<b>Co maju Realita a Iluzia spolocne? </b></br>
+Vsimni si, ze hlavna myslienka, ktoru Mainstream, Nabozenstvo, Peniaze, Media, Politika a Skola uci ludi je, ze Iluzia je skutocna. Avsak nic nemoze byt dalej od Pravdy.</br></br>
+<b>Co maju Skutocnost a Iluzia spolocne? </b></br>
 Umernost!</br>
 </br>
  <table border="1">
   <tr>
-   <th>Iluzia</th><th>Realita</th>
+   <th>Iluzia</th><th>Skutocnost</th>
+  </tr>
+  <tr>
+   <td>Je to realne (Je to vnimatelne, je to hmotne)</td><td>Je to skutocne (V zmysle je to echt)</td>
+  </tr>
+  <tr>
+   <td>die Realitat</td><td>Die Wirklichkeit</td>
   </tr>
   <tr>
    <td>Klamstvo</td><td>Pravda</td>
   </tr>
   <tr>
    <td>Pozorovanie</td><td>Model</td>
+  </tr>
+   <tr>
+   <td>Castica</td><td>Vlna</td>
+  </tr>
+  <tr>
+   <td>Hmota</td><td>Potencialita</td>
   </tr>
   <tr>
    <td>0,1,1,2,3,5</td><td>Phi^-1, 1, Phi^1, Phi^2, Phi^3, Phi^4</td>
@@ -71,14 +83,15 @@ Umernost!</br>
    <td>Cas</td><td>Pohyb Slnka okolo Zeme</td>
   </tr>
   <tr>
-   <td>Autorita</td><td>Neexistuje</td>
+   <td>Autorita</td><td>Tvorba zakona tvorstva patri tvorcovi</td>
   </tr>
   <tr>
-   <td>Vlada</td><td>Neexistuje</td>
+   <td>Vlada</td><td>Sebaregulacia</td>
   </tr>
   </table></br>
   <div style="background-color: black">
-   <img src="images/seedoflife1.png" eight="280" width="280"/>
+   <img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
   </div>
 </center>
 </i>

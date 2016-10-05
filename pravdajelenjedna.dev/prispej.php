@@ -22,7 +22,8 @@ Icq: 209929029</br>
 Email: eeerik9@protonmail.com</br>
 <center>
 <div style="background-color: black">
-<img src="images/seedoflife1.png" eight="280" width="280"/>
+<img src="images/seedoflife1.png" eight="280" width="280"/></br>
+<font color="white">Copyright &#169;. All Rights Reserved.</font>
 </center>
 </div>
 ';
