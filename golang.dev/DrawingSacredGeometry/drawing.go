@@ -14,9 +14,16 @@ func main() {
 
 	defer timeTrack(time.Now(), "Function main")
 	// MandelbrotSet()
-	Spiral = GenerateSpiral(Spiral, Golden /*Archimedean*/)
-	Spiral = Zoom(Spiral, 0.1)
+	Spiral = GenerateSpiral(Spiral, Golden /*, Archimedean*/)
+	Spiral = Zoom(Spiral, 0.2)
+	ShiftedSpiral = ShiftCoordinates(Spiral)
+	ShiftedSpiral = FlipVertically(ShiftedSpiral)
+	//ShiftedSpiral = FlipHorizontally(ShiftedSpiral)
+	ShiftedSpiral = FlipXY(ShiftedSpiral)
+	ShiftedSpiral = FlipHorizontally(ShiftedSpiral)
+	ShiftedSpiral = FlipHorizontally(ShiftedSpiral)
+	SpiralImage := PaintCoordinates(ShiftedSpiral)
 
-	ArchimedeanSpiral(Spiral)
+	ExportImage(SpiralImage, "Agoldenspiral6.png")
 
 }

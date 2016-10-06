@@ -49,16 +49,19 @@ type CoordinatesInt struct {
 	Y int
 }
 
-var spwidth = 1000
-var spheight = 1000
+var spwidth = 600
+var spheight = 600
 var spmax = 1000
 
 const (
-	spangle = 900
+	spangle = 990
 )
 
 // Spiral ...
 var Spiral [spangle]CoordinatesFloat
+
+// ShiftedSpiral ...
+var ShiftedSpiral [spangle]CoordinatesInt
 
 var spimg = image.NewRGBA(image.Rect(0, 0, spwidth, spheight))
 var spcol color.Color
@@ -68,6 +71,32 @@ type spiralFunc func(float64) float64
 // Archimedean ...
 func Archimedean(angle float64) float64 {
 	return angle
+}
+
+// FlipHorizontally ...
+func FlipHorizontally(shiftedSpiral [spangle]CoordinatesInt) [spangle]CoordinatesInt {
+	for angle := 0; angle < spangle; angle++ {
+		shiftedSpiral[angle].X = spwidth - shiftedSpiral[angle].X - 1
+	}
+	return shiftedSpiral
+}
+
+// FlipVertically ...
+func FlipVertically(shiftedSpiral [spangle]CoordinatesInt) [spangle]CoordinatesInt {
+	for angle := 0; angle < spangle; angle++ {
+		shiftedSpiral[angle].Y = spwidth - shiftedSpiral[angle].Y - 1
+	}
+	return shiftedSpiral
+}
+
+// FlipXY ...
+func FlipXY(shiftedSpiral [spangle]CoordinatesInt) [spangle]CoordinatesInt {
+	for angle := 0; angle < spangle; angle++ {
+		tmp := shiftedSpiral[angle].X
+		shiftedSpiral[angle].X = shiftedSpiral[angle].Y
+		shiftedSpiral[angle].Y = tmp
+	}
+	return shiftedSpiral
 }
 
 // Golden ...
@@ -86,8 +115,8 @@ func GenerateSpiral(spiral [spangle]CoordinatesFloat, f spiralFunc) [spangle]Coo
 		}
 		radius := f(float64(angle))
 
-		cF.Y = math.Sin(float64(angle)*Degree) * radius
-		cF.X = math.Cos(float64(angle)*Degree) * radius
+		cF.X = math.Sin(float64(angle)*Degree) * radius
+		cF.Y = math.Cos(float64(angle)*Degree) * radius
 
 		spiral[angle] = cF
 	}
@@ -95,11 +124,12 @@ func GenerateSpiral(spiral [spangle]CoordinatesFloat, f spiralFunc) [spangle]Coo
 }
 
 // ShiftCoordinates ...
-func ShiftCoordinates(cF CoordinatesFloat) CoordinatesInt {
-	var cI CoordinatesInt
-	cI.X = int(cF.X + math.Ceil(float64(spwidth/2)))
-	cI.Y = int(cF.Y + math.Ceil(float64(spheight/2)))
-	return cI
+func ShiftCoordinates(spiral [spangle]CoordinatesFloat) [spangle]CoordinatesInt {
+	for angle := 0; angle < spangle; angle++ {
+		ShiftedSpiral[angle].X = int(Spiral[angle].X + math.Ceil(float64(spwidth/2)))
+		ShiftedSpiral[angle].Y = int(Spiral[angle].Y + math.Ceil(float64(spheight/2)))
+	}
+	return ShiftedSpiral
 }
 
 // Zoom ...
@@ -111,27 +141,50 @@ func Zoom(spiral [spangle]CoordinatesFloat, factor float64) [spangle]Coordinates
 	return spiral
 }
 
-// ArchimedeanSpiral ...
-func ArchimedeanSpiral(spiral [spangle]CoordinatesFloat) {
-	//red := color.RGBA{255, 0, 0, 255} // Red
-	green := color.RGBA{0, 255, 0, 255} // Green
-	black := color.RGBA{0, 0, 0, 255}   // White
-
+// EraseBoard ...
+func EraseBoard(col color.Color) {
 	for x := 0; x < spwidth; x++ {
 		for y := 0; y < spheight; y++ {
-			spimg.Set(x, y, black)
+			spimg.Set(x, y, col)
 		}
 	}
+}
 
-	var cI CoordinatesInt
+// PaintCoordinates ...
+func PaintCoordinates(shiftedSpiral [spangle]CoordinatesInt) *image.RGBA {
+
+	//red := color.RGBA{255, 0, 0, 255} // Red
+	green := color.RGBA{0, 255, 0, 255} // Green
+	blue := color.RGBA{0, 0, 255, 255}  // Blue
+	// black := color.RGBA{0, 0, 0, 255}   // Black
+	// white := color.RGBA{255, 255, 255, 255} //white
+
+	EraseBoard(blue)
 	for angle := 0; angle < spangle; angle++ {
-		cI = ShiftCoordinates(spiral[angle])
+		cI := shiftedSpiral[angle]
 		if cI.X >= 0 && cI.X < spwidth && cI.Y >= 0 && cI.Y < spheight {
 			spimg.Set(cI.X, cI.Y, green)
+			spimg.Set(cI.X-1, cI.Y, green)
+			spimg.Set(cI.X+1, cI.Y, green)
+			spimg.Set(cI.X, cI.Y-1, green)
+			spimg.Set(cI.X, cI.Y+1, green)
+			spimg.Set(cI.X-1, cI.Y-1, green)
+			spimg.Set(cI.X+1, cI.Y-1, green)
+			spimg.Set(cI.X-1, cI.Y+1, green)
+			spimg.Set(cI.X+1, cI.Y+1, green)
+			spimg.Set(cI.X-2, cI.Y, green)
+			spimg.Set(cI.X+2, cI.Y, green)
+			spimg.Set(cI.X, cI.Y-2, green)
+			spimg.Set(cI.X, cI.Y+2, green)
 		}
 	}
 
-	f, err := os.Create("archimedeanspiral4.png")
+	return spimg
+}
+
+// ExportImage ...
+func ExportImage(spimg *image.RGBA, filename string) {
+	f, err := os.Create(filename)
 	if err != nil {
 		panic(err)
 	}
