@@ -61,7 +61,17 @@ k .. growth factor is a constant, special for golden spiral, <p>$k = \frac{4ln(\
 <img src="images/logarithmic_spiral.png" position="absolute" alt="Phi4" align="left">
 <br clear="left">
 
+<img src="images/vesica1.png" position="absolute" alt="Phi4" align="left">
+<br clear="left">
 
+<img src="images/threecircles.png" position="absolute" alt="Phi4" align="left">
+<br clear="left">
+
+<img src="images/seedoflife.png" position="absolute" alt="Phi4" align="left">
+<br clear="left">
+
+<img src="images/flowerof.png" position="absolute" alt="Phi4" align="left">
+<br clear="left">
 
 <!--
 <p>Dividing $x^2+1$ by $y^2$ gives \[\frac{x^2+1}{y^2}\]</p>

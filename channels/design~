@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+#corners1 {
+    border-radius: 15px;
+    border: 3px solid #73AD21;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#buttons {
+    
+}
+
+#corners2 {
+    border-radius: 15px;
+    border: 3px solid #FF0000;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#area1 { 
+    vertical-align:top;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<div id="corners1">
+<div id="d1">
+ <label id="l1">Lab1 </label>
+ <button id="b1"> - </button>
+ 
+ <script>
+ $( "#b1" ).click(function() {
+ $( "#d1" ).remove();
+ });
+ </script>
+</div>
+
+</br>
+
+
+<div id="d2">
+<label>Lab2 </label>
+<button id="b2"> - </button>
+<script>
+ $( "#b2" ).click(function() {
+ $( "#d2" ).remove();
+ });
+</script>
+</div>
+
+</br>
+
+<div id="d3"></div>
+
+</br>
+
+<div id="d4"></div>
+
+<br/>
+
+<div id="d5"></div>
+</div>
+
+<br/><!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+#corners1 {
+    border-radius: 15px;
+    border: 3px solid #73AD21;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#buttons {
+    
+}
+
+#corners2 {
+    border-radius: 15px;
+    border: 3px solid #FF0000;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;  
+    
+}
+
+#area1 { 
+    vertical-align:top;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+<div id="corners1">
+<div id="d1">
+ <label id="l1">Lab1 </label>
+ <button id="b1"> - </button>
+ 
+ <script>
+ $( "#b1" ).click(function() {
+ $( "#d1" ).remove();
+ });
+ </script>
+</div>
+
+</br>
+
+
+<div id="d2">
+<label>Lab2 </label>
+<button id="b2"> - </button>
+<script>
+ $( "#b2" ).click(function() {
+ $( "#d2" ).remove();
+ });
+</script>
+</div>
+
+</br>
+
+<div id="d3"></div>
+
+</br>
+
+<div id="d4"></div>
+
+<br/>
+
+<div id="d5"></div>
+</div>
+
+<br/>
+
+
+<div id="corners2">
+<div id="3">
+<textarea id="t6" rows="1">Lab3 </textarea>
+<button id="b6"> + </button>
+<script>
+function findEmptyDiv(){
+ for (i=1; i<6; i++){
+  var elem = $('#d'+i);
+  if (elem.is(':empty')){
+   return elem;
+  }
+ }
+ return null;
+}
+ 
+    $("#b6").click(function(){
+        var elem = findEmptyDiv();
+        if(elem != null) {
+         elem.replaceWith('<div id="#3"><label>'+ $("#t6").val() +' </label><button id="b3">-</button></div>');
+       }
+    });
+</script>
+</div>
+</div>
+</body>
+</html>
+
+
+<div id="corners2">
+<div id="3">
+<textarea id="t6" rows="1">Lab3 </textarea>
+<button id="b6"> + </button>
+<script>
+function findEmptyDiv(){
+ for (i=1; i<6; i++){
+  var elem = $('#d'+i);
+  if (elem.is(':empty')){
+   return elem;
+  }
+ }
+ return null;
+}
+ 
+    $("#b6").click(function(){
+        var elem = findEmptyDiv();
+        if(elem != null) {
+         elem.replaceWith('<div id="#3"><label>'+ $("#t6").val() +' </label><button id="b3">-</button></div>');
+       }
+    });
+</script>
+</div>
+</div>
+</body>
+</html>

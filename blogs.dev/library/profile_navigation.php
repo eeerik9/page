@@ -16,6 +16,8 @@
    <a href="profile.php?page=dictionary.php">Dictionary</a></li>
   <li class="border" <?php if ($thisPage=="art") echo " id=\"currentpage\""; ?>>
    <a href="profile.php?page=art.php">Art</a></li>
+  <li class="border" <?php if ($thisPage=="art2") echo " id=\"currentpage\""; ?>>
+   <a href="profile.php?page=art2.php">Art2</a></li>
   <li class="border" <?php if ($thisPage=="logout") echo " id=\"currentpage\""; ?>>
    <a href="logout.php">Log Out</a>
   </li>

@@ -1,8 +1,8 @@
 <?php
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-$link = mysql_connect("localhost", "recon_qss", "recon_qss");
+$link = mysql_connect("mysql12.000webhost.com", "a6922024_eeerik9", "nikanika1");
 // Selecting Database
-$db = mysql_select_db("database1", $link);
+$db = mysql_select_db("a6922024_eeerik9", $link);
 session_start();// Starting Session
 // Storing Session
 $user_check=$_SESSION['login_user'];

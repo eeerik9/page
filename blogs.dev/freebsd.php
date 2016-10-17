@@ -274,7 +274,7 @@ Make sure you have enough bandwidth to support this. Use the following link to d
 
 Finally, here is my liquid-playlist.xml file.
 <xmp>
-<?xml version="1.0"?>
+
 <ices>
     <!-- run in background -->
     <background>1</background>

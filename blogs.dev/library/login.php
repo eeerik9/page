@@ -8,12 +8,12 @@
    $username=$_POST['username'];
    $password=$_POST['password'];
    // Establishing Connection with Server by passing server_name, user_id and password as a parameter
-   $link = mysql_connect("localhost", "recon_qss", "recon_qss");
+   $link = mysql_connect("mysql12.000webhost.com", "a6922024_eeerik9", "nikanika1");
    // To protect MySQL injection for Security purpose
    $username = mysql_real_escape_string(stripslashes($username));
    $password = mysql_real_escape_string(stripslashes($password));
    // Selecting Database
-   $db = mysql_select_db("database1", $link);
+   $db = mysql_select_db("a6922024_eeerik9", $link);
    // SQL query to fetch information of registerd users and finds user match.
    $query = mysql_query("select * from login where password='$password' AND username='$username'", $link);
    $rows = mysql_num_rows($query);
