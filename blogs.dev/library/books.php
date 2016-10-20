@@ -38,7 +38,8 @@ Joy: Surrender to the body.,
 The Voice of the Body: The Role of the Body in Psychotherapy.
 
 James DeMeo
-Saharasia, The Orgone Accumulator Handbook
+Saharasia, 
+The Orgone Accumulator Handbook.
 
 Bernd Senf
 Der Nebel um das Geld, 
@@ -72,6 +73,7 @@ Infinite Love Is the Only Truth: Everything Else Is Illusion.,
 The David Icke Guide to the Global Conspiracy (and how to end it)., 
 Human Race Get Off Your Knees: The Lion Sleeps No More., 
 Remember Who You Are: Remember 'Where' You Are and Where You 'Come' From., 
-anom The Perception Deception: Or... It's All Bollocks �~@~T Yes, All of It., Phantom Self (And how to find the real one).
+The Perception Deception: Or... It's All Bollocks. Yes, All of It., 
+Phantom Self (And how to find the real one).
 </pre>
 

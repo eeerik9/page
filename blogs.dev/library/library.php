@@ -24,7 +24,7 @@
      <label>Password :</label>
      <input id="password" name="password" placeholder="**********" type="password">
      <input name="submit" type="submit" value="Login"></br>
-     (Username: guest, Password: quest) 
+     (Username: guest, Password: guest) 
      <span><?php echo $error; ?></span>
     </form>
    </div>

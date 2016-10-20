@@ -2,7 +2,7 @@ Please contact me when in doubt about any information content. Whether it is not
 Write me in case of your further interest in Library material or in case you would like to get your own access. <br>
 <br>
 Name: XXXXX<br>
-Mail: eeerik9@gmail.com<br>
+Mail: eeerik9.net16.net@gmail.com<br>
 Icq: 209929029<br>
 <br><br><br>
 

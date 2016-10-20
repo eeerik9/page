@@ -1,4 +1,30 @@
 <pre>
+Split
+ splits a large file into smaller chunks
+ using number of lines:
+<code>
+$ ls
+test
+$ cat test
+this
+is
+my
+test
+$ split -l 2 test te
+$ ls
+test testaa testab
+</code>
+Time
+ reports time consumed by command execution
+<code>
+$ time date
+Ut okt 18 13:50:09 CEST 2016
+
+real	0m0.001s
+user	0m0.000s
+sys	0m0.000s
+</code>
+--
 Clone linux disk 
 Whether you’re setting up multiple computers or doing a full backup, 
 cloning hard drives is a common maintenance task. Don’t bother burning a new boot CD or paying for new software

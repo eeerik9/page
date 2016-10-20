@@ -3,7 +3,7 @@
 #nav {
  text-align: left;
  float: left;
- width: 35%;
+ width: 30%;
  height: 100%;
 
 /*
@@ -25,8 +25,8 @@
 
  text-align: justify;
 
- margin-left: 45%;
- margin-right: 5%;
+ margin-left: 34%;
+ margin-right: 4%;
 
  height: 94%;
  overflow-y: auto;
