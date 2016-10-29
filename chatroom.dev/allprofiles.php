@@ -11,4 +11,5 @@ echo "User Names:</br>";
 while($row = pg_fetch_assoc($ret)){
  echo '<a href="profileuserdisplay.php?user='.$row['username'].'"target="_top">'.$row['username'].'</a>;';
 }
+pg_close($link);
 ?>
