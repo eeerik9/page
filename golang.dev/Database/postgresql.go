@@ -14,14 +14,15 @@ func main() {
 			dbuser, dbpass, dbhost, dbport, dbname, sslmode))
 	checkErr(err, "Successfully connected to DB ..")
 
-	//tableFoo := "foo"l
+	tableFoo := "foo"
 	// Create table foo
-	createTable := "CREATE TABLE foo (id SERIAL, name TEXT NOT NULL, value INT, real REAL, modtime timestamp DEFAULT current_timestamp)"
+	//createTable := "CREATE TABLE foo (id SERIAL, name TEXT NOT NULL, value INT, real REAL, modtime timestamp DEFAULT current_timestamp)"
+	createTable := fmt.Sprintf("CREATE TABLE %s (id SERIAL, name TEXT NOT NULL, value INT, real REAL, modtime timestamp DEFAULT current_timestamp)", tableFoo)
 	_, err = linkPG.Exec(createTable)
 	checkErr(err, "Table foo successfully created ..")
 
 	// Drop table foo
-	dropTable := "DROP TABLE foo"
+	dropTable := fmt.Sprintf("DROP TABLE %s", tableFoo)
 	_, err = linkPG.Exec(dropTable)
 	checkErr(err, "Table foo droped")
 
