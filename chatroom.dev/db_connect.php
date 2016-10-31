@@ -1,9 +1,6 @@
 <?php
 function get_link() {
- $host ="host=127.0.0.1";
- $port="port=5432";
- $dbname="dbname=database1";
- $cred="user=recon_qss password=recon_qss"; //pgsql pgsql
+ include("credentials.php");	
  // Database connection 
  $link = null;
  //echo "Connect\n";

@@ -1,9 +1,6 @@
 <?php
- $host="host=127.0.0.1";
- $port="port=5432";
- $dbname="dbname=database1";
- $cred="user=recon_qss password=recon_qss"; //pgsql pgsql
- echo "Connect\n"; 
+ include ("credentials.php");
+  echo "Connect\n"; 
  $db = pg_connect( "$host $port $dbname $cred" );
  echo "Postgres connected call</br>"; 
  if (!$db) {
@@ -33,7 +30,7 @@
     resources CHAR(512),
     give CHAR(256),
     receive CHAR(256),
-    photo CHAR(32),
+    photo CHAR(100),
     contact CHAR(256)
   );
 
