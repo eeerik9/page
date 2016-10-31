@@ -10,6 +10,15 @@
 
    session_start();
    $name= mysql_escape_string($_GET["n"]);
+
+   $link = get_link();
+   $sql = "SELECT * FROM forum_topics WHERE name= '{$name}'";
+   $ret = mysql_query($sql, $link);
+   $row = mysql_fetch_assoc($ret);
+   $views = $row['views'];
+   $views = $views +1;
+   $sql = "UPDATE forum_topics SET views = '{$views}' WHERE name = '{$name}'";
+   $ret = mysql_query($sql, $link);
    if(isset($_SESSION['prihlaseny'])){
     echo '
      <form action="pridajspravu.php" method="post" enctype="multipart/form-data">
@@ -24,7 +33,7 @@
    }
  
     
-   echo '
+   echo ' 
     <table border="1" style="width:100%">
      <th style="width: 2%">Id</th>
      <th style="width: 18%">Info</th>
@@ -33,7 +42,6 @@
       echo '<th style="widht: 2%">X</th>';
      }
    
-     $link = get_link();
      $sql = "SELECT * FROM $name";
      $ret = mysql_query($sql, $link);
      while ($row = mysql_fetch_assoc($ret)){

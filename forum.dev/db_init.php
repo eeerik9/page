@@ -1,10 +1,6 @@
 <?php
  // Mysql DB init
- $dbhost="localhost";
- $dbuser="recon_qss";
- $dbpass="recon_qss";
- $dbname="database1";
-
+ include("credentials.php");
  // Connect to mysql
  $link = mysql_connect($dbhost, $dbuser, $dbpass);
  if(! $link )
@@ -71,6 +67,19 @@
   die ("Error: " .  mysql_error());
  }
  echo 'Table forum created successfully</br>';
+
+// table remoteips access 
+ $sql = "DROP TABLE remote_ips";
+ if (!mysql_query($sql, $link)) {
+  echo "Do not panic, the table does not exit</br>"; 
+ }
+ echo 'Table topics dropped</br>';
+ $sql ="CREATE TABLE remote_ips ( id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, ip VARCHAR(50) NOT NULL, count INT(10) NOT NULL, posted TIMESTAMP)";
+
+ if (!mysql_query($sql, $link)) {
+  die ("Error: " .  mysql_error());
+ }
+ echo 'Table remote_ips created successfully</br>';
  
  mysql_close($link);
 ?>

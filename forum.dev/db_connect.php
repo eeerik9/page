@@ -1,10 +1,8 @@
 <?php
 function get_link() {
- $dbhost="localhost";
- $dbuser="recon_qss";
- $dbpass="recon_qss";
- $dbname="database1";
- // Database connection 
+ // Database connection
+ include("credentials.php");
+
  $link = null;
  
  // Connect to mysql
