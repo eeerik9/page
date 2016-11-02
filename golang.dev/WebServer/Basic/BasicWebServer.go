@@ -1,7 +1,6 @@
 package main
 
 import (
-	"dbconnect"
 	"fmt"
 	"log"
 	"net/http"
@@ -29,7 +28,6 @@ func welcomeHandler(w http.ResponseWriter, r *http.Request) {
 		errorHandler(w, r, http.StatusNotFound)
 	}
 	fmt.Fprintln(w, "Welcome to Go Web Development")
-	dbconnect.DBconnect(w)
 
 }
 
