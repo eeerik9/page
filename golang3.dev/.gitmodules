@@ -1,9 +1,0 @@
-[submodule "vendor/github.com/stretchr/testify"]
-	path = vendor/github.com/stretchr/testify
-	url = https://github.com/stretchr/testify.git
-[submodule "vendor/github.com/DATA-DOG/godog"]
-	path = vendor/github.com/DATA-DOG/godog
-	url = https://github.com/DATA-DOG/godog.git
-[submodule "vendor/golang.org/x/oauth2"]
-	path = vendor/golang.org/x/oauth2
-	url = https://github.com/golang/oauth2.git
