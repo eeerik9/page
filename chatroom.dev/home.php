@@ -7,23 +7,15 @@
  <head>
   <title>Your Home Page</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  </script>
-  <script type="text/javascript"
-   src="http://code.jquery.com/jquery-latest.js">
+  <script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.js">
   </script>
   <script>
    $(document).ready(function(){
-    setInterval(function(){
-     $("#chats").load("chats.php");
-    }, 1000);
+    $("#chats").load("chats.php");
    });
-  </script>
-  <script>
    $(document).ready(function(){
-    setInterval(function() {
-     $("#refresh").load("logged.php");
-    }, 1000);
-    });
+    $("#refresh").load("logged.php");
+   });
   </script> 
  </head>
  <body>
@@ -71,8 +63,6 @@
     <div id="text2">
      <div id="refresh">
      </div> <!-- div "refresh" i-->
-<!-- setInterval(
-    $("#refresh").load("logged.php"), 3000); -->
     </div> <!-- div "text2"-->
    </div> <!-- div "logged"-->
   </div> <!-- div "all" -->

@@ -10,33 +10,15 @@
  <head>
   <title>Your Home Page</title>
   <link href="style.css" rel="stylesheet" type="text/css">
-  </script>
-  <script type="text/javascript"
-   src="http://code.jquery.com/jquery-latest.js">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
   </script>
   <script>
    $(document).ready(function(){
-    setInterval(function() {
-     $("#text1").load("chattext.php");
-    }, 10);
+    $("#text1").load("chattext.php");
    });
- 
- /*$(document).ready(function(){
-    setInterval(function() {
-     var d = $('#text1');
-     $("#chat").animate({ scrollTop: $(document).height() }, "fast");
-    }, 5000);
-   });
-*/
-
-
-  </script>
-  <script>
    $(document).ready(function(){
-    setInterval(function() {
-     $("#refresh").load("logged.php");
-    }, 1000);
-    });
+    $("#refresh").load("logged.php");
+   });
   </script> 
  </head>
  <body>
@@ -91,10 +73,6 @@
  <div id="text2">
   <div id="refresh">
   </div>
-<!-- setInterval(
-    $("#refresh").load("logged.php"), 3000); -->
-
-
  </div>
 </div>
 
